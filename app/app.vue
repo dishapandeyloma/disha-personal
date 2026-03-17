@@ -1,15 +1,19 @@
 <template>
-  <div class="app-wrapper">
-    <div class="noise-overlay"></div>
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
-    
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+  <UApp>
+    <div class="app-wrapper">
+      <div class="noise-overlay"></div>
+      <div class="bg-glow glow-1"></div>
+      <div class="bg-glow glow-2"></div>
+      
+      <UMain>
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
+      </UMain>
 
-    <CustomCursor />
-  </div>
+      <CustomCursor />
+    </div>
+  </UApp>
 </template>
 
 <script setup>

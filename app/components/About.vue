@@ -5,18 +5,18 @@
         <div class="about-content">
           <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
           <p class="lead">
-            I am a qualified and professional web developer with <strong>5 years of experience</strong> in development and deployment.
+            {{ $t('about.lead') }}
           </p>
           <div class="skills-mini">
-            <div v-for="tag in ['Full Stack', 'Vue Expert', 'Node.js', 'Kafka']" :key="tag" class="skill-tag">
-              {{ tag }}
+            <div v-for="tag in ['fullstack', 'vue', 'node', 'kafka']" :key="tag" class="skill-tag">
+              {{ $t('about.tags.' + tag) }}
             </div>
           </div>
           <p class="main-text">
-            I have strong creative and analytical skills. I consistently strive to work smart and acquire skills related to my profession, ensuring growth and excellence in every project I undertake.
+            {{ $t('about.mainText') }}
           </p>
           <div class="stats-grid">
-            <div v-for="stat in stats" :key="stat.label" class="stat-card glass-card">
+            <div v-for="stat in stats" :key="stat.key" class="stat-card glass-card">
               <span class="stat-num">{{ stat.num }}</span>
               <span class="stat-label">{{ stat.label }}</span>
             </div>
@@ -27,12 +27,12 @@
           <div class="visual-container glass-card">
             <div class="experience-badge">
               <span class="years">5</span>
-              <span class="text">Years of<br/>Progress</span>
+              <span class="text" v-html="$t('about.philosophy.badge')"></span>
             </div>
             <div class="philosophy-box">
               <Icon name="ri:code-s-slash-line" size="40" class="icon" />
-              <h3>Problem Solver</h3>
-              <p>Turning complex problems into elegant solutions through clean, maintainable code.</p>
+              <h3>{{ $t('about.philosophy.title') }}</h3>
+              <p>{{ $t('about.philosophy.text') }}</p>
             </div>
           </div>
         </div>
@@ -43,12 +43,17 @@
 
 <script setup>
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const stats = [
-  { num: '5+', label: 'Years Experience' },
-  { num: '20+', label: 'Projects Completed' },
-  { num: '10+', label: 'Happy Clients' }
-]
+gsap.registerPlugin(ScrollTrigger)
+
+const { t } = useI18n()
+
+const stats = computed(() => [
+  { num: '5+', label: t('about.stats.experience'), key: 'exp' },
+  { num: '20+', label: t('about.stats.projects'), key: 'proj' },
+  { num: '10+', label: t('about.stats.clients'), key: 'client' }
+])
 
 onMounted(() => {
   gsap.from('.about-content > *', {
@@ -60,7 +65,8 @@ onMounted(() => {
     y: 30,
     duration: 1,
     stagger: 0.15,
-    ease: 'power3.out'
+    ease: 'power3.out',
+    clearProps: 'all'
   })
 
   gsap.from('.about-visual', {
@@ -71,7 +77,8 @@ onMounted(() => {
     opacity: 0,
     scale: 0.9,
     duration: 1.2,
-    ease: 'power2.out'
+    ease: 'power2.out',
+    clearProps: 'all'
   })
 })
 </script>

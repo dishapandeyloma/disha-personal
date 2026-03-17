@@ -28,6 +28,7 @@
       </div>
 
       <div class="nav-actions">
+        <LanguageSwitcher />
         <ThemeToggle />
         <div class="menu-toggle" @click="isMenuOpen = !isMenuOpen">
           <Icon
@@ -44,6 +45,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const { t } = useI18n();
+
 gsap.registerPlugin(ScrollTrigger);
 
 const isScrolled = ref(false);
@@ -52,13 +55,13 @@ const activeSection = ref("hero");
 const navLinksRef = ref(null);
 const navPillRef = ref(null);
 
-const navLinks = [
-  { id: "hero", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "contact", label: "Contact" },
-];
+const navLinks = computed(() => [
+  { id: "hero", label: t("nav.home") },
+  { id: "about", label: t("nav.about") },
+  { id: "experience", label: t("nav.experience") },
+  { id: "skills", label: t("nav.skills") },
+  { id: "contact", label: t("nav.contact") },
+]);
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
@@ -124,7 +127,7 @@ onMounted(() => {
   }, 100);
 
   // GSAP ScrollTrigger for Scroll-Spy
-  navLinks.forEach((link) => {
+  navLinks.value.forEach((link) => {
     const section = document.getElementById(link.id);
     if (section) {
       const st = ScrollTrigger.create({
@@ -313,8 +316,8 @@ nav.scrolled {
 
 @media (max-width: 768px) {
   .nav-content {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0 0 24px 24px;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0;
     margin: 0;
   }
 

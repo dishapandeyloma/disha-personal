@@ -1,7 +1,10 @@
 <template>
   <section id="experience" class="section-padding experience-section">
     <div class="container">
-      <h2 class="section-title text-center">My <span class="text-gradient">Journey</span></h2>
+      <h2 class="section-title text-center">
+        {{ $t('experience.title').split(' ')[0] }}
+        <span class="text-gradient">{{ $t('experience.title').split(' ').slice(1).join(' ') }}</span>
+      </h2>
       
       <div class="experience-list">
         <div v-for="(job, index) in experiences" :key="index" class="experience-card glass-card">
@@ -26,57 +29,64 @@
 
 <script setup>
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const experiences = [
+gsap.registerPlugin(ScrollTrigger)
+
+const { t, tm, rt } = useI18n()
+
+const experiences = computed(() => [
   {
     company: 'LomaTechnology',
-    role: 'Frontend Developer',
+    role: t('experience.jobs.lomatechnology.role'),
     period: '2023 - Present',
     logo: 'ri:terminal-window-line',
-    tasks: [
-      'Designed admin panel of a CMS system.',
-      'Worked on HRMS system.',
-      'Designed responsive landing page of KK Group.',
-      'Worked on responsive development of gaming platform website.',
-      'Maintained legacy codebases and implemented enhancements.'
-    ]
+    tasks: tm('experience.jobs.lomatechnology.tasks').map(task => rt(task))
   },
   {
     company: 'smartData Enterprises Ltd.',
-    role: 'Associate Developer',
+    role: t('experience.jobs.smartdata.role'),
     period: '2021 - 2023',
     logo: 'ri:code-box-line',
-    tasks: [
-      'Worked on Trained.ai (AI/ML Response System) using React.js and Redux.',
-      'Developed major functionalities for Jikapu.com (E-commerce Platform).',
-      'Implemented JWT Authentication, Token, and Auth validation.',
-      'Developed number of APIs and integrated with frontend using React Hooks.'
-    ]
+    tasks: tm('experience.jobs.smartdata.tasks').map(task => rt(task))
   },
   {
     company: 'KNKSoftInfotech Pvt Ltd.',
-    role: 'Junior Web Developer',
+    role: t('experience.jobs.knksoft.role'),
     period: '2020 - 2021',
     logo: 'ri:html5-line',
-    tasks: [
-      'Worked on car rental project using HTML/CSS, PHP, and MySQL.',
-      'Explored MERN stack by doing maintenance work for developed websites.'
-    ]
+    tasks: tm('experience.jobs.knksoft.tasks').map(task => rt(task))
   }
-]
+])
 
 onMounted(() => {
-  gsap.from('.experience-card', {
+  gsap.from('.section-title', {
     scrollTrigger: {
-      trigger: '.experience-list',
+      trigger: '.experience-section',
       start: 'top 80%',
     },
     opacity: 0,
-    x: -30,
+    y: 30,
     duration: 1,
-    stagger: 0.2,
-    ease: 'power3.out'
+    ease: 'power3.out',
+    clearProps: 'all'
   })
+
+  gsap.fromTo('.experience-card', 
+    { opacity: 0, x: -30 },
+    {
+      scrollTrigger: {
+        trigger: '.experience-list',
+        start: 'top 85%',
+      },
+      opacity: 1,
+      x: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out',
+      clearProps: 'all' // Clear GSAP styles after animation
+    }
+  )
 })
 </script>
 
@@ -119,7 +129,7 @@ onMounted(() => {
 
 .company {
   color: var(--primary);
-  opacity: 0.9;
+  opacity: 1;
   font-weight: 700;
 }
 
@@ -141,7 +151,7 @@ onMounted(() => {
   position: relative;
   padding-left: 1.5rem;
   color: var(--text-primary);
-  opacity: 0.85;
+  opacity: 1; /* Fully visible */
   margin-bottom: 0.75rem;
   font-size: 1.05rem;
 }

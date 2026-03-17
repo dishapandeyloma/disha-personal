@@ -3,18 +3,18 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="badge-wrapper">
-          <span class="hero-badge">Available for Projects</span>
+          <span class="hero-badge">{{ $t('hero.badge') }}</span>
         </div>
         <h1 class="main-title">
           Developer <br />
           <span class="text-gradient">& Designer</span>
         </h1>
         <p class="description">
-          I'm <strong>Disha Pandey</strong>, specialized in crafting <span class="highlight">premium</span> digital experiences that merge high-end aesthetics with robust engineering.
+          {{ $t('hero.description') }}
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn-primary">View Projects</a>
-          <a href="#contact" class="btn-secondary">Get in touch</a>
+          <a href="#projects" class="btn-primary">{{ $t('hero.viewProjects') }}</a>
+          <a href="#contact" class="btn-secondary">{{ $t('hero.getInTouch') }}</a>
         </div>
       </div>
       
@@ -24,14 +24,14 @@
           <div class="image-overlay"></div>
         </div>
         <div class="floating-chips">
-          <div class="chip chip-1 glass-card"><Icon name="logos:vue" /> Vue Expert</div>
-          <div class="chip chip-2 glass-card"><Icon name="logos:nodejs-icon" /> Node.js</div>
+          <div class="chip chip-1 glass-card"><Icon name="logos:vue" /> {{ $t('about.tags.vue') }}</div>
+          <div class="chip chip-2 glass-card"><Icon name="logos:nodejs-icon" /> {{ $t('about.tags.node') }}</div>
         </div>
       </div>
     </div>
     
     <div class="scroll-down">
-      <span class="scroll-text">Scroll to explore</span>
+      <span class="scroll-text">{{ $t('hero.scroll') }}</span>
       <div class="scroll-line"></div>
     </div>
   </section>

@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Über mich",
+    "experience": "Erfahrung",
+    "skills": "Skills",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Verfügbar für Projekte",
+    "title": "Entwickler & Designer",
+    "description": "Ich bin Disha Pandey, spezialisiert auf die Erstellung erstklassiger digitaler Erlebnisse, die High-End-Ästhetik mit robuster Technik verbinden.",
+    "viewProjects": "Projekte ansehen",
+    "getInTouch": "Kontakt aufnehmen",
+    "scroll": "Scrollen zum Entdecken"
+  },
+  "about": {
+    "title": "Über mich",
+    "lead": "Ich bin eine qualifizierte und professionelle Webentwicklerin mit 5 Jahren Erfahrung in Entwicklung und Deployment.",
+    "tags": {
+      "fullstack": "Full Stack",
+      "vue": "Vue Expertin",
+      "node": "Node.js",
+      "kafka": "Kafka"
+    },
+    "mainText": "Ich verfüge über starke kreative und analytische Fähigkeiten. Ich strebe konsequent danach, effizient zu arbeiten und mir berufsrelevante Fähigkeiten anzueignen, um Wachstum und Exzellenz in jedem Projekt zu gewährleisten, das ich übernehme.",
+    "stats": {
+      "experience": "Jahre Erfahrung",
+      "projects": "Abgeschlossene Projekte",
+      "clients": "Zufriedene Kunden"
+    },
+    "philosophy": {
+      "badge": "Jahre des Fortschritts",
+      "title": "Problemlöserin",
+      "text": "Komplexe Probleme durch sauberen, wartbaren Code in elegante Lösungen verwandeln."
+    }
+  },
+  "experience": {
+    "title": "Mein Weg",
+    "jobs": {
+      "lomatechnology": {
+        "role": "Frontend-Entwicklerin",
+        "tasks": [
+          "Entwurf des Admin-Panels eines CMS-Systems.",
+          "Mitarbeit am HRMS-System.",
+          "Entwurf einer responsiven Landingpage für die KK Group.",
+          "Responsive Entwicklung einer Gaming-Plattform-Webseite.",
+          "Pflege von Legacy-Codebasen und Implementierung von Erweiterungen."
+        ]
+      },
+      "smartdata": {
+        "role": "Associate Developer",
+        "tasks": [
+          "Arbeit an Trained.ai (AI/ML Response System) mit React.js und Redux.",
+          "Entwicklung wichtiger Funktionalitäten für Jikapu.com (E-Commerce Plattform).",
+          "Implementierung von JWT-Authentifizierung, Token und Auth-Validierung.",
+          "Entwicklung mehrerer APIs und Integration mit dem Frontend mittels React Hooks."
+        ]
+      },
+      "knksoft": {
+        "role": "Junior Webentwicklerin",
+        "tasks": [
+          "Mitarbeit an einem Mietwagen-Projekt mit HTML/CSS, PHP und MySQL.",
+          "Erkundung des MERN-Stacks durch Wartungsarbeiten an entwickelten Webseiten."
+        ]
+      }
+    }
+  },
+  "skills": {
+    "title": "Technische Expertise",
+    "subtitle": "Kreativität mit Code verbinden, um nahtlose digitale Welten zu erschaffen.",
+    "core": "Core Stack",
+    "coreDesc": "Beherrschung moderner Frameworks für Hochleistungsanwendungen.",
+    "statLabel": "Jahre Erfahrung",
+    "tools": "Tools & Infrastruktur",
+    "philosophy": "Code ist Poesie, und jedes Pixel erzählt eine Geschichte.",
+    "backend": "Backend & Resilienz",
+    "backendItems": {
+      "node": "Node.js / Express",
+      "db": "MongoDB / SQL",
+      "microservices": "Kafka / Microservices"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Interesse an einer Zusammenarbeit oder möchten Sie einfach nur Hallo sagen? Mein Posteingang ist immer offen.",
+    "methods": {
+      "email": "E-Mail",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "linkedin": "LinkedIn"
+    },
+    "form": {
+      "title": "Nachricht senden",
+      "subtitle": "Ich antworte innerhalb von 24 Stunden.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Ihr Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "Ihre E-Mail",
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Wie kann ich helfen?",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden."
+    }
+  },
+  "footer": {
+    "desc": "Design und Erstellung von High-End digitalen Erlebnissen.",
+    "nav": "Nav",
+    "connect": "Kontakt",
+    "crafted": "Mit Leidenschaft erstellt."
+  }
+}

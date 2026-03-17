@@ -2,19 +2,19 @@
   <section id="skills" class="section-padding skills-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Technical <span class="text-gradient">Expertise</span></h2>
-        <p class="section-desc">Merging creativity with code to build seamless digital worlds.</p>
+        <h2 class="section-title">{{ $t('skills.title').split(' ')[0] }} <span class="text-gradient">{{ $t('skills.title').split(' ').slice(1).join(' ') }}</span></h2>
+        <p class="section-desc">{{ $t('skills.subtitle') }}</p>
       </div>
       
       <div class="bento-grid">
         <!-- Main Stack Card -->
         <div class="bento-card main-stack glass-card">
           <div class="card-content">
-            <h3>Core Stack</h3>
+            <h3>{{ $t('skills.core') }}</h3>
             <div class="tech-icons">
               <Icon v-for="tech in coreTech" :key="tech.icon" :name="tech.icon" size="48" class="tech-icon" />
             </div>
-            <p>Mastering modern frameworks for high-performance applications.</p>
+            <p>{{ $t('skills.coreDesc') }}</p>
           </div>
         </div>
 
@@ -22,13 +22,13 @@
         <div class="bento-card stat-card glass-card">
           <div class="stat-content">
             <span class="stat-number">5+</span>
-            <span class="stat-label">Years of Mastery</span>
+            <span class="stat-label">{{ $t('skills.statLabel') }}</span>
           </div>
         </div>
 
         <!-- Cloud & DevOps Card -->
         <div class="bento-card tools-card glass-card">
-          <h3>Tools & Infrastructure</h3>
+          <h3>{{ $t('skills.tools') }}</h3>
           <div class="tools-list">
             <span v-for="tool in tools" :key="tool" class="tool-tag">{{ tool }}</span>
           </div>
@@ -36,24 +36,24 @@
 
         <!-- Quote/Philosophy Card -->
         <div class="bento-card philosophy-card glass-card">
-          <p class="philosophy-text">"Code is poetry, and every pixel tells a story."</p>
+          <p class="philosophy-text">"{{ $t('skills.philosophy') }}"</p>
         </div>
 
         <!-- Backend Expertise Card -->
         <div class="bento-card backend-card glass-card">
-          <h3>Backend & Resilience</h3>
+          <h3>{{ $t('skills.backend') }}</h3>
           <div class="backend-content">
             <div class="backend-item">
               <Icon name="ri:server-line" size="24" />
-              <span>Node.js / Express</span>
+              <span>{{ $t('skills.backendItems.node') }}</span>
             </div>
             <div class="backend-item">
               <Icon name="ri:database-2-line" size="24" />
-              <span>MongoDB / SQL</span>
+              <span>{{ $t('skills.backendItems.db') }}</span>
             </div>
             <div class="backend-item">
               <Icon name="ri:bubble-chart-line" size="24" />
-              <span>Kafka / Microservices</span>
+              <span>{{ $t('skills.backendItems.microservices') }}</span>
             </div>
           </div>
         </div>
@@ -64,6 +64,11 @@
 
 <script setup>
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const { t } = useI18n()
 
 const coreTech = [
   { icon: 'logos:vue', name: 'Vue' },
@@ -75,6 +80,19 @@ const coreTech = [
 const tools = ['Git', 'Docker', 'Vite', 'GSAP', 'Tailwind', 'Vercel']
 
 onMounted(() => {
+  gsap.from('.section-header > *', {
+    scrollTrigger: {
+      trigger: '.skills-section',
+      start: 'top 80%',
+    },
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    stagger: 0.15,
+    ease: 'power3.out',
+    clearProps: 'all'
+  })
+
   gsap.from('.bento-card', {
     scrollTrigger: {
       trigger: '.bento-grid',
@@ -84,7 +102,8 @@ onMounted(() => {
     y: 40,
     duration: 1,
     stagger: 0.15,
-    ease: 'power3.out'
+    ease: 'power3.out',
+    clearProps: 'all'
   })
 })
 </script>

@@ -4,32 +4,36 @@
       <div class="footer-content">
         <div class="footer-brand">
           <div class="logo">DP</div>
-          <p class="brand-desc">Designing and building high-end digital experiences.</p>
+          <p class="brand-desc">{{ $t('footer.desc') }}</p>
         </div>
         
         <div class="footer-links">
           <div class="link-group">
-            <h4>Nav</h4>
-            <a href="#hero">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Work</a>
+            <h4>{{ $t('footer.nav') }}</h4>
+            <a href="#hero">{{ $t('nav.home') }}</a>
+            <a href="#about">{{ $t('nav.about') }}</a>
+            <a href="#projects">{{ $t('experience.title') }}</a>
           </div>
           <div class="link-group">
-            <h4>Connect</h4>
-            <a href="https://linkedin.com/in/disha-pandey" target="_blank">LinkedIn</a>
+            <h4>{{ $t('footer.connect') }}</h4>
+            <a href="https://linkedin.com/in/disha-pandey" target="_blank">{{ $t('contact.methods.linkedin') }}</a>
             <a href="https://github.com/DishaPandey" target="_blank">GitHub</a>
-            <a href="https://wa.me/918755269268" target="_blank">WhatsApp</a>
-            <a href="https://t.me/dishadp" target="_blank">Telegram</a>
+            <a href="https://wa.me/918755269268" target="_blank">{{ $t('contact.methods.whatsapp') }}</a>
+            <a href="https://t.me/dishadp" target="_blank">{{ $t('contact.methods.telegram') }}</a>
           </div>
         </div>
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; {{ new Date().getFullYear() }} Disha Pandey. Crafted with Passion.</p>
+        <p>&copy; {{ new Date().getFullYear() }} Disha Pandey. {{ $t('footer.crafted') }}</p>
       </div>
     </div>
   </footer>
 </template>
+
+<script setup>
+const { t } = useI18n()
+</script>
 
 <style scoped>
 .footer {

@@ -7,9 +7,9 @@
 
     <div class="container relative">
       <div class="section-header">
-        <h2 class="section-title">Let's Connect</h2>
+        <h2 class="section-title">{{ $t('contact.title') }}</h2>
         <p class="section-desc">
-          Interested in working together or just want to say hi? My inbox is always open.
+          {{ $t('contact.description') }}
         </p>
       </div>
 
@@ -25,7 +25,7 @@
               <Icon :name="method.icon" size="28" />
             </div>
             <div class="method-info">
-              <span class="method-label">{{ method.name }}</span>
+              <span class="method-label">{{ method.label }}</span>
               <span class="method-value">{{ method.value }}</span>
             </div>
             <div class="method-arrow">
@@ -37,39 +37,39 @@
         <div class="contact-form-container glass-card">
           <form @submit.prevent="handleSubmit" class="contact-form">
             <div class="form-header">
-              <h3>Send a Message</h3>
-              <p>I'll get back to you within 24 hours.</p>
+              <h3>{{ $t('contact.form.title') }}</h3>
+              <p>{{ $t('contact.form.subtitle') }}</p>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">{{ $t('contact.form.nameLabel') }}</label>
                 <div class="input-wrapper">
                   <Icon name="ri:user-3-line" class="input-icon" />
-                  <input id="name" v-model="form.name" type="text" placeholder="Your Name" required />
+                  <input id="name" v-model="form.name" type="text" :placeholder="$t('contact.form.namePlaceholder')" required />
                 </div>
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">{{ $t('contact.form.emailLabel') }}</label>
                 <div class="input-wrapper">
                   <Icon name="ri:mail-line" class="input-icon" />
-                  <input id="email" v-model="form.email" type="email" placeholder="Your Email" required />
+                  <input id="email" v-model="form.email" type="email" :placeholder="$t('contact.form.emailPlaceholder')" required />
                 </div>
               </div>
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
+              <label for="message">{{ $t('contact.form.messageLabel') }}</label>
               <div class="input-wrapper">
                 <Icon name="ri:chat-3-line" class="input-icon textarea-icon" />
-                <textarea id="message" v-model="form.message" rows="4" placeholder="How can I help you?" required></textarea>
+                <textarea id="message" v-model="form.message" rows="4" :placeholder="$t('contact.form.messagePlaceholder')" required></textarea>
               </div>
             </div>
             <button type="submit" class="submit-btn" :disabled="isSending">
               <span class="btn-content" v-if="!isSending">
-                Send Message
+                {{ $t('contact.form.submit') }}
                 <Icon name="ri:send-plane-fill" />
               </span>
               <span class="btn-content" v-else>
-                Sending...
+                {{ $t('contact.form.sending') }}
                 <Icon name="ri:loader-4-line" class="spin" />
               </span>
               <div class="btn-glow"></div>
@@ -83,7 +83,11 @@
 
 <script setup>
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 const isSending = ref(false)
+const { t } = useI18n()
 
 const form = ref({
   name: '',
@@ -91,40 +95,44 @@ const form = ref({
   message: ''
 })
 
-const contactMethods = [
+const contactMethods = computed(() => [
   {
     name: 'Email',
+    label: t('contact.methods.email'),
     value: 'disha4037@gmail.com',
-    icon: 'ri:mail-send-line',
+    icon: 'lucide:mail',
     link: 'mailto:disha4037@gmail.com',
-    color: '#ea4335',
-    colorRgb: '234, 67, 53'
+    color: '#3b82f6',
+    colorRgb: '59, 130, 246'
   },
   {
     name: 'WhatsApp',
+    label: t('contact.methods.whatsapp'),
     value: '+91 87552 69268',
-    icon: 'ri:whatsapp-line',
+    icon: 'lucide:message-circle',
     link: 'https://wa.me/918755269268',
-    color: '#25d366',
-    colorRgb: '37, 211, 102'
+    color: '#3b82f6',
+    colorRgb: '59, 130, 246'
   },
   {
     name: 'Telegram',
+    label: t('contact.methods.telegram'),
     value: '@dishadp',
-    icon: 'ri:telegram-line',
+    icon: 'lucide:send',
     link: 'https://t.me/dishadp',
-    color: '#0088cc',
-    colorRgb: '0, 136, 204'
+    color: '#3b82f6',
+    colorRgb: '59, 130, 246'
   },
   {
     name: 'LinkedIn',
+    label: t('contact.methods.linkedin'),
     value: 'disha-pandey',
-    icon: 'ri:linkedin-box-line',
+    icon: 'lucide:linkedin',
     link: 'https://www.linkedin.com/in/disha-pandey-117717152/',
-    color: '#0077b5',
-    colorRgb: '0, 119, 181'
+    color: '#3b82f6',
+    colorRgb: '59, 130, 246'
   }
-]
+])
 
 const handleSubmit = async () => {
   isSending.value = true
@@ -132,7 +140,7 @@ const handleSubmit = async () => {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500))
     console.log('Form submitted:', form.value)
-    alert('Thank you for your message! I will get back to you soon.')
+    alert(t('contact.form.success'))
     form.value = { name: '', email: '', message: '' }
   } finally {
     isSending.value = false
@@ -152,20 +160,23 @@ onMounted(() => {
     y: 30,
     duration: 0.8,
     stagger: 0.2,
-    ease: 'power3.out'
+    ease: 'power3.out',
+    clearProps: 'all'
   })
   .from('.method-card', {
     opacity: 0,
     x: -30,
     duration: 0.6,
     stagger: 0.1,
-    ease: 'power3.out'
+    ease: 'power3.out',
+    clearProps: 'all'
   }, '-=0.4')
   .from('.contact-form-container', {
     opacity: 0,
     x: 30,
     duration: 0.8,
-    ease: 'power3.out'
+    ease: 'power3.out',
+    clearProps: 'all'
   }, '-=0.6')
 
   // Background blobs animation
@@ -275,7 +286,9 @@ onMounted(() => {
   text-decoration: none;
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  background: var(--glass-color);
+  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 }
@@ -295,8 +308,8 @@ onMounted(() => {
 .method-card:hover {
   transform: translateX(10px) scale(1.02);
   border-color: var(--accent-color);
-  background: rgba(255, 255, 255, 0.03);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+  background: var(--surface-hover);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
 .method-card:hover::before {
@@ -312,15 +325,22 @@ onMounted(() => {
   justify-content: center;
   background: rgba(var(--accent-color-rgb), 0.1);
   color: var(--accent-color);
-  margin-right: 1.5rem;
+  margin-right: 1.25rem;
   font-size: 1.5rem;
   transition: all 0.3s ease;
+  box-shadow: inset 0 0 0 1px rgba(var(--accent-color-rgb), 0.1);
+}
+
+.light-mode .method-icon-wrapper {
+  background: rgba(var(--accent-color-rgb), 0.08);
+  box-shadow: inset 0 0 0 1px rgba(var(--accent-color-rgb), 0.05);
 }
 
 .method-card:hover .method-icon-wrapper {
-  background: var(--accent-color);
+  background: #3b82f6;
   color: white;
   transform: rotate(10deg);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 .method-info {
@@ -358,7 +378,9 @@ onMounted(() => {
 .contact-form-container {
   padding: 3rem;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  background: var(--glass-color);
+  backdrop-filter: blur(10px);
 }
 
 .form-header {
@@ -369,6 +391,10 @@ onMounted(() => {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .form-header p {
@@ -405,8 +431,12 @@ onMounted(() => {
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-secondary);
-  opacity: 0.5;
+  opacity: 0.6;
   transition: all 0.3s ease;
+}
+
+.light-mode .input-icon {
+  opacity: 0.8;
 }
 
 .textarea-icon {
@@ -417,8 +447,8 @@ onMounted(() => {
 .input-wrapper input,
 .input-wrapper textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 1.25rem 1.25rem 1.25rem 3.5rem;
   color: var(--text-primary);
@@ -434,9 +464,9 @@ onMounted(() => {
 .input-wrapper input:focus,
 .input-wrapper textarea:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-hover);
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
+  box-shadow: 0 0 0 4px hsla(var(--h-primary), var(--s-primary), var(--l-primary), 0.15);
 }
 
 .input-wrapper input:focus + .input-icon,
@@ -484,7 +514,11 @@ onMounted(() => {
 
 .submit-btn:hover:not(:disabled) {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px -5px rgba(var(--primary-rgb), 0.4);
+  box-shadow: 0 10px 25px -5px hsla(var(--h-primary), var(--s-primary), var(--l-primary), 0.4);
+}
+
+.light-mode .submit-btn:hover:not(:disabled) {
+  box-shadow: 0 10px 25px -5px hsla(var(--h-primary), var(--s-primary), var(--l-primary), 0.3);
 }
 
 .submit-btn:hover .btn-glow {
@@ -538,6 +572,14 @@ onMounted(() => {
     height: 48px;
     margin-right: 1rem;
   }
+}
+
+.light-mode .glass-card {
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .glass-card:hover {
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.1);
 }
 </style>
 

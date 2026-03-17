@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "experience": "经验",
+    "skills": "技能",
+    "contact": "联系"
+  },
+  "hero": {
+    "badge": "承接项目中",
+    "title": "开发 & 设计",
+    "description": "我是 Disha Pandey，专注于打造高端数字体验，将顶级美学与稳健工程相结合。",
+    "viewProjects": "查看项目",
+    "getInTouch": "联系我",
+    "scroll": "向下滚动探索"
+  },
+  "about": {
+    "title": "关于我",
+    "lead": "我一名拥有 5 年开发和部署经验的专业网页开发人员。",
+    "tags": {
+      "fullstack": "全栈",
+      "vue": "Vue 专家",
+      "node": "Node.js",
+      "kafka": "Kafka"
+    },
+    "mainText": "我拥有强大的创造力和分析能力。我一直努力聪明地工作，获得与我职业相关的技能，确保在我承担的每个项目中都能成长和卓越。",
+    "stats": {
+      "experience": "年经验",
+      "projects": "已完成项目",
+      "clients": "满意客户"
+    },
+    "philosophy": {
+      "badge": "进步年数",
+      "title": "问题解决者",
+      "text": "通过整洁、可维护的代码将复杂问题转化为优雅的解决方案。"
+    }
+  },
+  "experience": {
+    "title": "我的旅程",
+    "jobs": {
+      "lomatechnology": {
+        "role": "前端开发人员",
+        "tasks": [
+          "设计了 CMS 系统的管理面板。",
+          "参与 HRMS 系统开发。",
+          "设计了 KK 集团的响应式落地页。",
+          "参与博彩平台网站的响应式开发。",
+          "维护旧代码库并实施增强功能。"
+        ]
+      },
+      "smartdata": {
+        "role": "助理开发人员",
+        "tasks": [
+          "使用 React.js 和 Redux 开发了 Trained.ai (AI/ML 响应系统)。",
+          "为 Jikapu.com (电子商务平台) 开发了主要功能。",
+          "实现了 JWT 身份验证、令牌和身份验证验证。",
+          "开发了多项 API 并使用 React Hooks 与前端集成。"
+        ]
+      },
+      "knksoft": {
+        "role": "初级网页开发人员",
+        "tasks": [
+          "使用 HTML/CSS, PHP 和 MySQL 开发了租车项目。",
+          "通过对已开发网站进行维护工作探索了 MERN 技术栈。"
+        ]
+      }
+    }
+  },
+  "skills": {
+    "title": "技术专长",
+    "subtitle": "将创意与代码融合，构建无缝数字世界。",
+    "core": "核心技术栈",
+    "coreDesc": "精通用于高性能应用程序的现代框架。",
+    "statLabel": "精通年数",
+    "tools": "工具 & 基础设施",
+    "philosophy": "代码如诗，每一个像素都在诉说故事。",
+    "backend": "后端 & 韧性",
+    "backendItems": {
+      "node": "Node.js / Express",
+      "db": "MongoDB / SQL",
+      "microservices": "Kafka / 微服务"
+    }
+  },
+  "contact": {
+    "title": "保持联系",
+    "description": "有兴趣合作或只是想打个招呼？我的收件箱随时为您敞开。",
+    "methods": {
+      "email": "电子邮件",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "linkedin": "LinkedIn"
+    },
+    "form": {
+      "title": "发送消息",
+      "subtitle": "我会在 24 小时内回复您。",
+      "nameLabel": "姓名",
+      "namePlaceholder": "您的姓名",
+      "emailLabel": "电子邮件",
+      "emailPlaceholder": "您的电子邮件",
+      "messageLabel": "消息",
+      "messagePlaceholder": "有什么我可以帮您的？",
+      "submit": "发送消息",
+      "sending": "发送中...",
+      "success": "感谢您的消息！我会尽快给您回复。"
+    }
+  },
+  "footer": {
+    "desc": "设计并构建高端数字体验。",
+    "nav": "导航",
+    "connect": "联系",
+    "crafted": "激情打造。"
+  }
+}
