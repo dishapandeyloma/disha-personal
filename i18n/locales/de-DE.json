@@ -9,13 +9,21 @@
   "hero": {
     "badge": "Verfügbar für Projekte",
     "title": "Entwickler & Designer",
+    "developer": "Entwickler",
+    "designer": "Designer",
+    "profileAlt": "Disha Pandey - Full-Stack-Entwicklerprofil",
+    "logoText": "DISHA",
     "description": "Ich bin Disha Pandey, spezialisiert auf die Erstellung erstklassiger digitaler Erlebnisse, die High-End-Ästhetik mit robuster Technik verbinden.",
     "viewProjects": "Projekte ansehen",
     "getInTouch": "Kontakt aufnehmen",
+    "downloadCV": "Lebenslauf herunterladen",
     "scroll": "Scrollen zum Entdecken"
   },
   "about": {
     "title": "Über mich",
+    "titlePrimary": "Über",
+    "titleSecondary": "Mich",
+    "yearsExperience": "Jahre",
     "lead": "Ich bin eine qualifizierte und professionelle Webentwicklerin mit 5 Jahren Erfahrung in Entwicklung und Deployment.",
     "tags": {
       "fullstack": "Full Stack",
@@ -37,6 +45,9 @@
   },
   "experience": {
     "title": "Mein Weg",
+    "titlePrimary": "Mein",
+    "titleSecondary": "Weg",
+    "present": "Gegenwart",
     "jobs": {
       "lomatechnology": {
         "role": "Frontend-Entwicklerin",
@@ -68,10 +79,13 @@
   },
   "skills": {
     "title": "Technische Expertise",
+    "titlePrimary": "Technische",
+    "titleSecondary": "Expertise",
     "subtitle": "Kreativität mit Code verbinden, um nahtlose digitale Welten zu erschaffen.",
     "core": "Core Stack",
     "coreDesc": "Beherrschung moderner Frameworks für Hochleistungsanwendungen.",
     "statLabel": "Jahre Erfahrung",
+    "experienceStat": "5+",
     "tools": "Tools & Infrastruktur",
     "philosophy": "Code ist Poesie, und jedes Pixel erzählt eine Geschichte.",
     "backend": "Backend & Resilienz",
@@ -108,6 +122,9 @@
     "desc": "Design und Erstellung von High-End digitalen Erlebnissen.",
     "nav": "Nav",
     "connect": "Kontakt",
-    "crafted": "Mit Leidenschaft erstellt."
+    "crafted": "Mit Leidenschaft erstellt.",
+    "github": "GitHub",
+    "copyrightName": "Disha Pandey"
   }
 }
+

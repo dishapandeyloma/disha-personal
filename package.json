@@ -21,6 +21,8 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@nuxtjs/robots": "^5.7.1",
+    "@nuxtjs/sitemap": "^7.6.0",
     "tailwindcss": "^4.0.0"
   }
 }

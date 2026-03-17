@@ -9,13 +9,21 @@
   "hero": {
     "badge": "案件受付中",
     "title": "開発者 & デザイナー",
+    "developer": "開発者",
+    "designer": "デザイナー",
+    "profileAlt": "Disha Pandey - フルスタック開発者のプロフィール",
+    "logoText": "DISHA",
     "description": "私は Disha Pandey です。ハイエンドな美学と堅牢なエンジニアリングを融合させた、プレミアムなデジタル体験の創出を専門としています。",
     "viewProjects": "プロジェクトを見る",
     "getInTouch": "お問い合わせ",
+    "downloadCV": "CVをダウンロード",
     "scroll": "スクロールして探索"
   },
   "about": {
     "title": "私について",
+    "titlePrimary": "私",
+    "titleSecondary": "について",
+    "yearsExperience": "年数",
     "lead": "私は、開発とデプロイにおいて5年の経験を持つ、資格のあるプロのウェブ開発者です。",
     "tags": {
       "fullstack": "フルスタック",
@@ -37,6 +45,9 @@
   },
   "experience": {
     "title": "私の歩み",
+    "titlePrimary": "私の",
+    "titleSecondary": "歩み",
+    "present": "現在",
     "jobs": {
       "lomatechnology": {
         "role": "フロントエンド開発者",
@@ -68,10 +79,13 @@
   },
   "skills": {
     "title": "技術的な専門知識",
+    "titlePrimary": "技術的な",
+    "titleSecondary": "専門知識",
     "subtitle": "創造性とコードを融合させ、シームレスなデジタル領域を構築します。",
     "core": "コアスタック",
     "coreDesc": "高性能アプリケーションのためのモダンなフレームワークに精通しています。",
     "statLabel": "習熟年数",
+    "experienceStat": "5年以上",
     "tools": "ツール & インフラ",
     "philosophy": "「コードは詩であり、すべてのピクセルが物語を語る。」",
     "backend": "バックエンド & レジリエンス",
@@ -108,6 +122,8 @@
     "desc": "ハイエンドなデジタル体験の設計と構築。",
     "nav": "ナビ",
     "connect": "連絡先",
-    "crafted": "情熱を込めて作成。"
+    "crafted": "情熱を込めて作成。",
+    "github": "GitHub",
+    "copyrightName": "Disha Pandey"
   }
 }

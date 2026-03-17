@@ -1,25 +1,20 @@
 <template>
   <div class="lang-switcher">
-    <USelectMenu
-      v-model="selected"
+    <!-- Using USelect for better stability as suggested -->
+    <USelect
+      v-model="selectedLocale"
       :items="items"
-      :content="{
-        align: 'end',
-        side: 'bottom',
-        sideOffset: 12
-      }"
       :ui="{
-        content: 'menu-content',
-        item: 'menu-item',
-        itemLabel: 'menu-item-label',
-        itemLeadingIcon: 'menu-item-icon'
+        base: 'select-base',
+        content: 'select-content',
+        item: 'select-item',
+        itemLabel: 'select-item-label'
       }"
-      search
-      :search-input-placeholder="t('search')"
+      class="custom-select"
     >
       <template #default="{ open }">
         <button class="switcher-trigger" :class="{ 'is-open': open }">
-          <div class="current-flag-wrapper">
+          <div class="current-flag">
             <Icon :name="getFlag(locale)" />
           </div>
           <span class="current-label">{{ getLocaleName(locale) }}</span>
@@ -33,17 +28,17 @@
             <Icon :name="item.flag" />
           </div>
           <span class="item-name">{{ item.label }}</span>
-          <div v-if="locale === item.value" class="active-check">
-            <Icon name="ri:checkbox-circle-fill" />
+          <div v-if="locale === item.value" class="active-indicator">
+            <Icon name="lucide:check" />
           </div>
         </div>
       </template>
-    </USelectMenu>
+    </USelect>
   </div>
 </template>
 
 <script setup>
-const { locale, locales, setLocale, t } = useI18n()
+const { locale, locales, setLocale } = useI18n()
 
 const flagMap = {
   'en-US': 'circle-flags:uk',
@@ -59,7 +54,7 @@ const getFlag = (code) => flagMap[code] || 'ri:global-line'
 
 const getLocaleName = (code) => {
   const loc = locales.value.find(l => l.code === code)
-  return loc ? loc.name : code
+  return loc ? loc.name : (code === 'en-US' ? 'English' : code)
 }
 
 const items = computed(() => {
@@ -70,12 +65,10 @@ const items = computed(() => {
   }))
 })
 
-const selected = computed({
-  get: () => items.value.find(i => i.value === locale.value) || items.value[0],
+const selectedLocale = computed({
+  get: () => locale.value,
   set: (val) => {
-    if (val && val.value) {
-      setLocale(val.value)
-    }
+    if (val) setLocale(val)
   }
 })
 </script>
@@ -90,47 +83,48 @@ const selected = computed({
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.4rem 1rem;
-  background: hsla(0, 0%, 100%, 0.03);
-  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  padding: 0.4rem 0.8rem;
+  background: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
   border-radius: 9999px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  color: var(--text-primary);
+  transition: all 0.3s ease;
+  color: #ffffff !important;
+  backdrop-filter: blur(12px);
 }
 
 .light-mode .switcher-trigger {
-  background: hsla(240, 10%, 10%, 0.03);
-  border: 1px solid hsla(240, 10%, 10%, 0.1);
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #000000 !important;
 }
 
 .switcher-trigger:hover, .switcher-trigger.is-open {
-  background: hsla(0, 0%, 100%, 0.08);
-  border-color: var(--primary);
-  transform: translateY(-1px);
+  border-color: #10b981 !important;
 }
 
-.light-mode .switcher-trigger:hover, .light-mode .switcher-trigger.is-open {
-  background: hsla(240, 10%, 10%, 0.06);
-}
-
-.current-flag-wrapper {
+.current-flag {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 
 .current-label {
-  font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-primary);
+  /* Hide on small devices */
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .current-label {
+    display: inline;
+  }
 }
 
 .chevron {
   font-size: 1rem;
-  opacity: 0.5;
+  opacity: 0.6;
   transition: transform 0.4s ease;
 }
 
@@ -141,87 +135,110 @@ const selected = computed({
 .item-inner {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.75rem;
   width: 100%;
 }
 
 .item-flag {
   display: flex;
   align-items: center;
-  justify-content: center;
   font-size: 1.4rem;
 }
 
 .item-name {
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  /* Hide on small devices */
+  display: none;
 }
 
-.light-mode .item-name {
-  color: #333;
+@media (min-width: 640px) {
+  .item-name {
+    display: inline;
+  }
 }
 
-.active-check {
+.active-indicator {
   margin-left: auto;
   color: #10b981;
   font-size: 1.1rem;
+  display: flex;
+  align-items: center;
 }
 </style>
 
 <style>
-/* Global styles for portal-rendered menu */
-.dark-mode .menu-content {
+/* Global overrides to kill all white artifacts and scrollbars */
+.dark-mode .select-content {
   background: #000000 !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(24px) !important;
-  border-radius: 1.25rem !important;
-  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9) !important;
-  padding: 0.6rem !important;
-  min-width: 240px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9) !important;
+  padding: 0.3rem !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  width: max-content !important;
+  min-width: 140px !important;
 }
 
-.light-mode .menu-content {
-  background: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
-  border-radius: 1.25rem !important;
-  padding: 0.6rem !important;
-  min-width: 240px !important;
+.dark-mode .select-item {
+  margin: 0.1rem 0 !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 0.9rem !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+  white-space: nowrap !important;
 }
 
-.menu-content input {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  color: white !important;
-  border-radius: 0.75rem !important;
-  margin-bottom: 0.5rem !important;
-  font-size: 0.85rem !important;
-  padding: 0.6rem 0.8rem !important;
+.dark-mode .select-item[data-state="checked"],
+.dark-mode .select-item[data-highlighted],
+.dark-mode .select-item:hover {
+  background: rgba(16, 185, 129, 0.1) !important;
+  color: #10b981 !important;
 }
 
-.light-mode .menu-content input {
-  background: rgba(0, 0, 0, 0.03) !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  color: black !important;
+/* Force hide scrollbars and prevent overflow on all inner containers */
+.select-content, 
+.select-content *, 
+.select-content [data-radix-scroll-area-viewport],
+.select-content [data-radix-scroll-area-content] {
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
-.menu-item {
-  display: flex !important;
-  align-items: center !important;
-  padding: 0.8rem 1rem !important;
-  margin: 0.25rem 0 !important;
-  border-radius: 0.8rem !important;
-  cursor: pointer !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+.select-content [data-radix-scroll-area-viewport]::-webkit-scrollbar,
+.select-content ::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
-.menu-item:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  transform: translateX(4px);
+/* Neutralize the default USelect base button artifacts */
+.select-base {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  height: auto !important;
+  width: auto !important;
+  gap: 0 !important;
+  --tw-ring-width: 0px !important;
+  --tw-ring-offset-width: 0px !important;
+  --tw-ring-offset-shadow: none !important;
+  --tw-ring-shadow: none !important;
 }
 
-.light-mode .menu-item:hover {
-  background: rgba(0, 0, 0, 0.05) !important;
+.dark-mode .select-base, .light-mode .select-base {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Hide duplicate chevron */
+.select-base [data-slot="trailing"] {
+  display: none !important;
 }
 </style>

@@ -9,13 +9,21 @@
   "hero": {
     "badge": "Available for Projects",
     "title": "Developer & Designer",
+    "developer": "Developer",
+    "designer": "Designer",
+    "profileAlt": "Disha Pandey - Full Stack Developer Profile",
+    "logoText": "DISHA",
     "description": "I'm Disha Pandey, specialized in crafting premium digital experiences that merge high-end aesthetics with robust engineering.",
     "viewProjects": "View Projects",
     "getInTouch": "Get in touch",
+    "downloadCV": "Download CV",
     "scroll": "Scroll to explore"
   },
   "about": {
     "title": "About Me",
+    "titlePrimary": "About",
+    "titleSecondary": "Me",
+    "yearsExperience": "Years",
     "lead": "I am a qualified and professional web developer with 5 years of experience in development and deployment.",
     "tags": {
       "fullstack": "Full Stack",
@@ -37,6 +45,9 @@
   },
   "experience": {
     "title": "My Journey",
+    "titlePrimary": "My",
+    "titleSecondary": "Journey",
+    "present": "Present",
     "jobs": {
       "lomatechnology": {
         "role": "Frontend Developer",
@@ -68,10 +79,13 @@
   },
   "skills": {
     "title": "Technical Expertise",
+    "titlePrimary": "Technical",
+    "titleSecondary": "Expertise",
     "subtitle": "Merging creativity with code to build seamless digital worlds.",
     "core": "Core Stack",
     "coreDesc": "Mastering modern frameworks for high-performance applications.",
     "statLabel": "Years of Mastery",
+    "experienceStat": "5+",
     "tools": "Tools & Infrastructure",
     "philosophy": "Code is poetry, and every pixel tells a story.",
     "backend": "Backend & Resilience",
@@ -108,6 +122,9 @@
     "desc": "Designing and building high-end digital experiences.",
     "nav": "Nav",
     "connect": "Connect",
-    "crafted": "Crafted with Passion."
+    "crafted": "Crafted with Passion.",
+    "github": "GitHub",
+    "copyrightName": "Disha Pandey"
   }
 }
+

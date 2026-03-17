@@ -5,7 +5,20 @@ export default defineNuxtConfig({
   srcDir: "app",
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/icon", "@nuxtjs/color-mode", "@nuxtjs/i18n", "@nuxt/ui"],
+  modules: ["@nuxt/icon", "@nuxtjs/color-mode", "@nuxtjs/i18n", "@nuxt/ui", "@nuxtjs/sitemap", "@nuxtjs/robots"],
+  site: {
+    url: 'https://dishapandey.com', // Replace with your actual domain
+    name: 'Disha Pandey | Full Stack Developer',
+    description: 'Portfolio of Disha Pandey, a Full Stack Developer specializing in Vue, Next.js, and Node.js.',
+    defaultLocale: 'en-US',
+  },
+  sitemap: {
+    enabled: true,
+  },
+  robots: {
+    enabled: true,
+    disallow: ['/admin', '/private'],
+  },
   colorMode: {
     preference: "dark",
     fallback: "dark",
@@ -28,6 +41,7 @@ export default defineNuxtConfig({
     defaultLocale: "en-US",
     strategy: "no_prefix",
     langDir: "locales",
+    baseUrl: 'https://dishapandey.com',
   },
   app: {
     head: {

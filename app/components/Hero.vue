@@ -3,52 +3,68 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="badge-wrapper">
-          <span class="hero-badge">{{ $t('hero.badge') }}</span>
+          <span class="hero-badge">{{ $t("hero.badge") }}</span>
         </div>
         <h1 class="main-title">
-          Developer <br />
-          <span class="text-gradient">& Designer</span>
+          {{ $t("hero.developer") }} <br />
+          <span class="text-gradient">& {{ $t("hero.designer") }}</span>
         </h1>
         <p class="description">
-          {{ $t('hero.description') }}
+          {{ $t("hero.description") }}
         </p>
         <div class="hero-actions">
-          <a href="#projects" class="btn-primary">{{ $t('hero.viewProjects') }}</a>
-          <a href="#contact" class="btn-secondary">{{ $t('hero.getInTouch') }}</a>
+          <a href="#projects" class="btn-primary">{{
+            $t("hero.viewProjects")
+          }}</a>
+          <a href="#contact" class="btn-secondary">{{
+            $t("hero.getInTouch")
+          }}</a>
+          <a href="/cv/Disha.pdf" download="Disha_Pandey_CV.pdf" class="btn-cv">
+            <Icon name="lucide:download" class="download-icon" />
+            {{ $t("hero.downloadCV") }}
+          </a>
         </div>
       </div>
-      
+
       <div class="hero-visual">
         <div class="image-box glass-card">
-          <img src="/images/profile.png" alt="Disha Pandey" class="profile-img" />
+          <img
+            src="/images/profile.png"
+            :alt="$t('hero.profileAlt')"
+            class="profile-img"
+          />
           <div class="image-overlay"></div>
         </div>
         <div class="floating-chips">
-          <div class="chip chip-1 glass-card"><Icon name="logos:vue" /> {{ $t('about.tags.vue') }}</div>
-          <div class="chip chip-2 glass-card"><Icon name="logos:nodejs-icon" /> {{ $t('about.tags.node') }}</div>
+          <div class="chip chip-1 glass-card">
+            <Icon name="logos:vue" /> {{ $t("about.tags.vue") }}
+          </div>
+          <div class="chip chip-2 glass-card">
+            <Icon name="logos:nodejs-icon" /> {{ $t("about.tags.node") }}
+          </div>
         </div>
       </div>
     </div>
-    
+
     <div class="scroll-down">
-      <span class="scroll-text">{{ $t('hero.scroll') }}</span>
+      <span class="scroll-text">{{ $t("hero.scroll") }}</span>
       <div class="scroll-line"></div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { gsap } from 'gsap'
+import { gsap } from "gsap";
 
 onMounted(() => {
-  const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } })
-  
-  tl.from('.hero-badge', { opacity: 0, y: 20, delay: 0.5 })
-    .from('.main-title', { opacity: 0, y: 40 }, '-=1')
-    .from('.description', { opacity: 0, y: 30 }, '-=1')
-    .from('.hero-actions', { opacity: 0, y: 30 }, '-=1.1')
-    .from('.hero-visual', { opacity: 0, scale: 0.8, rotate: 5 }, '-=1.2')
-})
+  const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.2 } });
+
+  tl.from(".hero-badge", { opacity: 0, y: 20, delay: 0.5 })
+    .from(".main-title", { opacity: 0, y: 40 }, "-=1")
+    .from(".description", { opacity: 0, y: 30 }, "-=1")
+    .from(".hero-actions", { opacity: 0, y: 30 }, "-=1.1")
+    .from(".hero-visual", { opacity: 0, scale: 0.8, rotate: 5 }, "-=1.2");
+});
 </script>
 
 <style scoped>
@@ -122,6 +138,32 @@ onMounted(() => {
   border-color: var(--primary);
 }
 
+.btn-cv {
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  font-weight: 700;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-cv:hover {
+  background: var(--primary-hover, #0056b3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px var(--primary);
+}
+
+.btn-cv:active {
+  transform: translateY(0);
+}
+
 .hero-visual {
   position: relative;
 }
@@ -169,8 +211,16 @@ onMounted(() => {
   border-radius: 1rem;
 }
 
-.chip-1 { top: 10%; right: -10%; transform: rotate(5deg); }
-.chip-2 { bottom: 20%; left: -15%; transform: rotate(-5deg); }
+.chip-1 {
+  top: 10%;
+  right: -10%;
+  transform: rotate(5deg);
+}
+.chip-2 {
+  bottom: 20%;
+  left: -15%;
+  transform: rotate(-5deg);
+}
 
 .scroll-down {
   position: absolute;
@@ -199,10 +249,22 @@ onMounted(() => {
 }
 
 @keyframes scrollLine {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -227,8 +289,12 @@ onMounted(() => {
     max-width: 400px;
     margin: 0 auto;
   }
-  .chip-1 { right: -5%; }
-  .chip-2 { left: -5%; }
+  .chip-1 {
+    right: -5%;
+  }
+  .chip-2 {
+    left: -5%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -252,7 +318,8 @@ onMounted(() => {
     max-width: 300px;
     margin: 0 auto;
   }
-  .btn-primary, .btn-secondary {
+  .btn-primary,
+  .btn-secondary {
     width: 100%;
     justify-content: center;
   }

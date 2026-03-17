@@ -3,7 +3,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-content">
-          <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+          <h2 class="section-title">{{ $t('about.titlePrimary') }} <span class="text-gradient">{{ $t('about.titleSecondary') }}</span></h2>
           <p class="lead">
             {{ $t('about.lead') }}
           </p>
@@ -27,7 +27,7 @@
           <div class="visual-container glass-card">
             <div class="experience-badge">
               <span class="years">5</span>
-              <span class="text" v-html="$t('about.philosophy.badge')"></span>
+              <span class="text" v-html="$t('about.yearsExperience') + '<br>' + $t('about.philosophy.badge')"></span>
             </div>
             <div class="philosophy-box">
               <Icon name="ri:code-s-slash-line" size="40" class="icon" />

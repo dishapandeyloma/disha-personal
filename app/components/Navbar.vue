@@ -2,7 +2,7 @@
   <nav :class="{ scrolled: isScrolled }">
     <div class="nav-content">
       <div class="logo" @click="scrollToTop">
-        <span class="logo-text">DISHA</span>
+        <span class="logo-text">{{ $t('hero.logoText') }}</span>
         <span class="logo-dot">.</span>
       </div>
 

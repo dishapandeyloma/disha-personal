@@ -9,14 +9,22 @@
   "hero": {
     "badge": "承接项目中",
     "title": "开发 & 设计",
+    "developer": "开发人员",
+    "designer": "设计师",
+    "profileAlt": "Disha Pandey - 全栈开发人员简介",
+    "logoText": "DISHA",
     "description": "我是 Disha Pandey，专注于打造高端数字体验，将顶级美学与稳健工程相结合。",
     "viewProjects": "查看项目",
     "getInTouch": "联系我",
+    "downloadCV": "下载简历",
     "scroll": "向下滚动探索"
   },
   "about": {
     "title": "关于我",
-    "lead": "我一名拥有 5 年开发和部署经验的专业网页开发人员。",
+    "titlePrimary": "关于",
+    "titleSecondary": "我",
+    "yearsExperience": "年",
+    "lead": "我一名拥有 5 年开发和部署经验 of 专业网页开发人员。",
     "tags": {
       "fullstack": "全栈",
       "vue": "Vue 专家",
@@ -37,6 +45,9 @@
   },
   "experience": {
     "title": "我的旅程",
+    "titlePrimary": "我的",
+    "titleSecondary": "历程",
+    "present": "至今",
     "jobs": {
       "lomatechnology": {
         "role": "前端开发人员",
@@ -68,10 +79,13 @@
   },
   "skills": {
     "title": "技术专长",
+    "titlePrimary": "技术",
+    "titleSecondary": "专长",
     "subtitle": "将创意与代码融合，构建无缝数字世界。",
     "core": "核心技术栈",
     "coreDesc": "精通用于高性能应用程序的现代框架。",
     "statLabel": "精通年数",
+    "experienceStat": "5+",
     "tools": "工具 & 基础设施",
     "philosophy": "代码如诗，每一个像素都在诉说故事。",
     "backend": "后端 & 韧性",
@@ -108,6 +122,8 @@
     "desc": "设计并构建高端数字体验。",
     "nav": "导航",
     "connect": "联系",
-    "crafted": "激情打造。"
+    "crafted": "激情打造。",
+    "github": "GitHub",
+    "copyrightName": "Disha Pandey"
   }
 }

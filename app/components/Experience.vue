@@ -2,8 +2,8 @@
   <section id="experience" class="section-padding experience-section">
     <div class="container">
       <h2 class="section-title text-center">
-        {{ $t('experience.title').split(' ')[0] }}
-        <span class="text-gradient">{{ $t('experience.title').split(' ').slice(1).join(' ') }}</span>
+        {{ $t('experience.titlePrimary') }}
+        <span class="text-gradient">{{ $t('experience.titleSecondary') }}</span>
       </h2>
       
       <div class="experience-list">
@@ -39,7 +39,7 @@ const experiences = computed(() => [
   {
     company: 'LomaTechnology',
     role: t('experience.jobs.lomatechnology.role'),
-    period: '2023 - Present',
+    period: '2023 - ' + t('experience.present'),
     logo: 'ri:terminal-window-line',
     tasks: tm('experience.jobs.lomatechnology.tasks').map(task => rt(task))
   },

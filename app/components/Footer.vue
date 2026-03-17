@@ -17,7 +17,7 @@
           <div class="link-group">
             <h4>{{ $t('footer.connect') }}</h4>
             <a href="https://linkedin.com/in/disha-pandey" target="_blank">{{ $t('contact.methods.linkedin') }}</a>
-            <a href="https://github.com/DishaPandey" target="_blank">GitHub</a>
+            <a href="https://github.com/DishaPandey" target="_blank">{{ $t('footer.github') }}</a>
             <a href="https://wa.me/918755269268" target="_blank">{{ $t('contact.methods.whatsapp') }}</a>
             <a href="https://t.me/dishadp" target="_blank">{{ $t('contact.methods.telegram') }}</a>
           </div>
@@ -25,7 +25,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; {{ new Date().getFullYear() }} Disha Pandey. {{ $t('footer.crafted') }}</p>
+        <p>&copy; {{ new Date().getFullYear() }} {{ $t('footer.copyrightName') }}. {{ $t('footer.crafted') }}</p>
       </div>
     </div>
   </footer>

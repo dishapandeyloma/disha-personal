@@ -2,7 +2,7 @@
   <section id="skills" class="section-padding skills-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">{{ $t('skills.title').split(' ')[0] }} <span class="text-gradient">{{ $t('skills.title').split(' ').slice(1).join(' ') }}</span></h2>
+        <h2 class="section-title">{{ $t('skills.titlePrimary') }} <span class="text-gradient">{{ $t('skills.titleSecondary') }}</span></h2>
         <p class="section-desc">{{ $t('skills.subtitle') }}</p>
       </div>
       
@@ -17,11 +17,11 @@
             <p>{{ $t('skills.coreDesc') }}</p>
           </div>
         </div>
-
+ 
         <!-- Experience Stat Card -->
         <div class="bento-card stat-card glass-card">
           <div class="stat-content">
-            <span class="stat-number">5+</span>
+            <span class="stat-number">{{ $t('skills.experienceStat') }}</span>
             <span class="stat-label">{{ $t('skills.statLabel') }}</span>
           </div>
         </div>

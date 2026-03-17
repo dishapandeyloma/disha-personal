@@ -9,13 +9,21 @@
   "hero": {
     "badge": "Sẵn sàng cho dự án mới",
     "title": "Lập trình viên & Nhà thiết kế",
+    "developer": "Nhà phát triển",
+    "designer": "Nhà thiết kế",
+    "profileAlt": "Disha Pandey - Hồ sơ Nhà phát triển Full Stack",
+    "logoText": "DISHA",
     "description": "Tôi là Disha Pandey, chuyên gia tạo ra những trải nghiệm kỹ thuật số cao cấp, kết hợp thẩm mỹ đỉnh cao với kỹ thuật vững chắc.",
     "viewProjects": "Xem dự án",
-    "getInTouch": "Liên hệ với tôi",
+    "getInTouch": "Liên hệ",
+    "downloadCV": "Tải xuống CV",
     "scroll": "Cuộn để khám phá"
   },
   "about": {
     "title": "Về tôi",
+    "titlePrimary": "Về",
+    "titleSecondary": "Tôi",
+    "yearsExperience": "Năm",
     "lead": "Tôi là một lập trình viên web chuyên nghiệp và có trình độ với 5 năm kinh nghiệm trong phát triển và triển khai.",
     "tags": {
       "fullstack": "Full Stack",
@@ -37,6 +45,9 @@
   },
   "experience": {
     "title": "Hành trình của tôi",
+    "titlePrimary": "Hành trình",
+    "titleSecondary": "của tôi",
+    "present": "Hiện tại",
     "jobs": {
       "lomatechnology": {
         "role": "Lập trình viên Frontend",
@@ -68,10 +79,13 @@
   },
   "skills": {
     "title": "Chuyên môn kỹ thuật",
+    "titlePrimary": "Chuyên môn",
+    "titleSecondary": "Kỹ thuật",
     "subtitle": "Kết hợp sự sáng tạo với mã nguồn để xây dựng thế giới kỹ thuật số liền mạch.",
     "core": "Công nghệ cốt lõi",
     "coreDesc": "Thành thạo các framework hiện đại cho các ứng dụng hiệu suất cao.",
     "statLabel": "Năm thành thạo",
+    "experienceStat": "5+",
     "tools": "Công cụ & Hạ tầng",
     "philosophy": "Mã nguồn là thơ ca, và mỗi pixel kể một câu chuyện.",
     "backend": "Backend & Độ bền",
@@ -108,6 +122,8 @@
     "desc": "Thiết kế và xây dựng những trải nghiệm kỹ thuật số cao cấp.",
     "nav": "Danh mục",
     "connect": "Kết nối",
-    "crafted": "Được tạo ra bằng tâm huyết."
+    "crafted": "Được tạo ra bằng tâm huyết.",
+    "github": "GitHub",
+    "copyrightName": "Disha Pandey"
   }
 }
