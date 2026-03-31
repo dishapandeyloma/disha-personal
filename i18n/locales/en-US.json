@@ -1,130 +1,129 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About",
-    "experience": "Experience",
-    "skills": "Skills",
-    "contact": "Contact"
-  },
-  "hero": {
-    "badge": "Available for Projects",
-    "title": "Developer & Designer",
-    "developer": "Developer",
-    "designer": "Designer",
-    "profileAlt": "Disha Pandey - Full Stack Developer Profile",
-    "logoText": "DISHA",
-    "description": "I'm Disha Pandey, specialized in crafting premium digital experiences that merge high-end aesthetics with robust engineering.",
-    "viewProjects": "View Projects",
-    "getInTouch": "Get in touch",
-    "downloadCV": "Download CV",
-    "scroll": "Scroll to explore"
-  },
-  "about": {
-    "title": "About Me",
-    "titlePrimary": "About",
-    "titleSecondary": "Me",
-    "yearsExperience": "Years",
-    "lead": "I am a qualified and professional web developer with 5 years of experience in development and deployment.",
-    "tags": {
-      "fullstack": "Full Stack",
-      "vue": "Vue Expert",
-      "node": "Node.js",
-      "kafka": "Kafka"
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "experience": "Experience",
+        "skills": "Skills",
+        "contact": "Contact"
     },
-    "mainText": "I have strong creative and analytical skills. I consistently strive to work smart and acquire skills related to my profession, ensuring growth and excellence in every project I undertake.",
-    "stats": {
-      "experience": "Years Experience",
-      "projects": "Projects Completed",
-      "clients": "Happy Clients"
+    "hero": {
+        "badge": "Available for Projects",
+        "title": "Developer & Designer",
+        "developer": "Developer",
+        "designer": "Designer",
+        "profileAlt": "Disha Pandey - Full Stack Developer Profile",
+        "logoText": "DISHA",
+        "description": "I'm Disha Pandey, specialized in crafting premium digital experiences that merge high-end aesthetics with robust engineering.",
+        "viewProjects": "View Projects",
+        "getInTouch": "Get in touch",
+        "downloadCV": "Download CV",
+        "scroll": "Scroll to explore"
     },
-    "philosophy": {
-      "badge": "Years of Progress",
-      "title": "Problem Solver",
-      "text": "Turning complex problems into elegant solutions through clean, maintainable code."
-    }
-  },
-  "experience": {
-    "title": "My Journey",
-    "titlePrimary": "My",
-    "titleSecondary": "Journey",
-    "present": "Present",
-    "jobs": {
-      "lomatechnology": {
-        "role": "Frontend Developer",
-        "tasks": [
-          "Designed admin panel of a CMS system.",
-          "Worked on HRMS system.",
-          "Designed responsive landing page of KK Group.",
-          "Worked on responsive development of gaming platform website.",
-          "Maintained legacy codebases and implemented enhancements."
-        ]
-      },
-      "smartdata": {
-        "role": "Associate Developer",
-        "tasks": [
-          "Worked on Trained.ai (AI/ML Response System) using React.js and Redux.",
-          "Developed major functionalities for Jikapu.com (E-commerce Platform).",
-          "Implemented JWT Authentication, Token, and Auth validation.",
-          "Developed number of APIs and integrated with frontend using React Hooks."
-        ]
-      },
-      "knksoft": {
-        "role": "Junior Web Developer",
-        "tasks": [
-          "Worked on car rental project using HTML/CSS, PHP, and MySQL.",
-          "Explored MERN stack by doing maintenance work for developed websites."
-        ]
-      }
-    }
-  },
-  "skills": {
-    "title": "Technical Expertise",
-    "titlePrimary": "Technical",
-    "titleSecondary": "Expertise",
-    "subtitle": "Merging creativity with code to build seamless digital worlds.",
-    "core": "Core Stack",
-    "coreDesc": "Mastering modern frameworks for high-performance applications.",
-    "statLabel": "Years of Mastery",
-    "experienceStat": "5+",
-    "tools": "Tools & Infrastructure",
-    "philosophy": "Code is poetry, and every pixel tells a story.",
-    "backend": "Backend & Resilience",
-    "backendItems": {
-      "node": "Node.js / Express",
-      "db": "MongoDB / SQL",
-      "microservices": "Kafka / Microservices"
-    }
-  },
-  "contact": {
-    "title": "Let's Connect",
-    "description": "Interested in working together or just want to say hi? My inbox is always open.",
-    "methods": {
-      "email": "Email",
-      "whatsapp": "WhatsApp",
-      "telegram": "Telegram",
-      "linkedin": "LinkedIn"
+    "about": {
+        "title": "About Me",
+        "titlePrimary": "About",
+        "titleSecondary": "Me",
+        "yearsExperience": "Years",
+        "lead": "I am a qualified and professional web developer with 5 years of experience in development and deployment.",
+        "tags": {
+            "fullstack": "Full Stack",
+            "vue": "Vue Expert",
+            "node": "Node.js",
+            "kafka": "Kafka"
+        },
+        "mainText": "I have strong creative and analytical skills. I consistently strive to work smart and acquire skills related to my profession, ensuring growth and excellence in every project I undertake.",
+        "stats": {
+            "experience": "Years Experience",
+            "projects": "Projects Completed",
+            "clients": "Happy Clients"
+        },
+        "philosophy": {
+            "badge": "Years of Progress",
+            "title": "Problem Solver",
+            "text": "Turning complex problems into elegant solutions through clean, maintainable code."
+        }
     },
-    "form": {
-      "title": "Send a Message",
-      "subtitle": "I'll get back to you within 24 hours.",
-      "nameLabel": "Name",
-      "namePlaceholder": "Your Name",
-      "emailLabel": "Email",
-      "emailPlaceholder": "Your Email",
-      "messageLabel": "Message",
-      "messagePlaceholder": "How can I help you?",
-      "submit": "Send Message",
-      "sending": "Sending...",
-      "success": "Thank you for your message! I will get back to you soon."
+    "experience": {
+        "title": "My Journey",
+        "titlePrimary": "My",
+        "titleSecondary": "Journey",
+        "present": "Present",
+        "jobs": {
+            "lomatechnology": {
+                "role": "Frontend Developer",
+                "tasks": [
+                    "Worked on responsive development of gaming platform website.",
+                    "Designed a CMS system.",
+                    "Designed a HRMS system.",
+                    "Designed multiple internal admin panels.",
+                    "Maintained legacy codebases and implemented enhancements."
+                ]
+            },
+            "smartdata": {
+                "role": "Associate Developer",
+                "tasks": [
+                    "Worked on Trained.ai (AI/ML Response System) using React.js and Redux.",
+                    "Developed major functionalities for Jikapu.com (E-commerce Platform).",
+                    "Implemented JWT Authentication, Token, and Auth validation.",
+                    "Developed number of APIs and integrated with frontend using React Hooks."
+                ]
+            },
+            "knksoft": {
+                "role": "Junior Web Developer",
+                "tasks": [
+                    "Worked on car rental project using HTML/CSS, PHP, and MySQL.",
+                    "Explored MERN stack by doing maintenance work for developed websites."
+                ]
+            }
+        }
+    },
+    "skills": {
+        "title": "Technical Expertise",
+        "titlePrimary": "Technical",
+        "titleSecondary": "Expertise",
+        "subtitle": "Merging creativity with code to build seamless digital worlds.",
+        "core": "Core Stack",
+        "coreDesc": "Mastering modern frameworks for high-performance applications.",
+        "statLabel": "Years of Mastery",
+        "experienceStat": "5+",
+        "tools": "Tools & Infrastructure",
+        "philosophy": "Code is poetry, and every pixel tells a story.",
+        "backend": "Backend & Resilience",
+        "backendItems": {
+            "node": "Node.js / Express",
+            "db": "MongoDB / SQL",
+            "microservices": "Kafka / Microservices"
+        }
+    },
+    "contact": {
+        "title": "Let's Connect",
+        "description": "Interested in working together or just want to say hi? My inbox is always open.",
+        "methods": {
+            "email": "Email",
+            "whatsapp": "WhatsApp",
+            "telegram": "Telegram",
+            "linkedin": "LinkedIn"
+        },
+        "form": {
+            "title": "Send a Message",
+            "subtitle": "I'll get back to you within 24 hours.",
+            "nameLabel": "Name",
+            "namePlaceholder": "Your Name",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Your Email",
+            "messageLabel": "Message",
+            "messagePlaceholder": "How can I help you?",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "success": "Thank you for your message! I will get back to you soon."
+        }
+    },
+    "footer": {
+        "desc": "Designing and building high-end digital experiences.",
+        "nav": "Nav",
+        "connect": "Connect",
+        "crafted": "Crafted with Passion.",
+        "github": "GitHub",
+        "copyrightName": "Disha Pandey"
     }
-  },
-  "footer": {
-    "desc": "Designing and building high-end digital experiences.",
-    "nav": "Nav",
-    "connect": "Connect",
-    "crafted": "Crafted with Passion.",
-    "github": "GitHub",
-    "copyrightName": "Disha Pandey"
-  }
 }
-

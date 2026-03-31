@@ -1,129 +1,129 @@
 {
-  "nav": {
-    "home": "Trang chủ",
-    "about": "Giới thiệu",
-    "experience": "Kinh nghiệm",
-    "skills": "Kỹ năng",
-    "contact": "Liên hệ"
-  },
-  "hero": {
-    "badge": "Sẵn sàng cho dự án mới",
-    "title": "Lập trình viên & Nhà thiết kế",
-    "developer": "Nhà phát triển",
-    "designer": "Nhà thiết kế",
-    "profileAlt": "Disha Pandey - Hồ sơ Nhà phát triển Full Stack",
-    "logoText": "DISHA",
-    "description": "Tôi là Disha Pandey, chuyên gia tạo ra những trải nghiệm kỹ thuật số cao cấp, kết hợp thẩm mỹ đỉnh cao với kỹ thuật vững chắc.",
-    "viewProjects": "Xem dự án",
-    "getInTouch": "Liên hệ",
-    "downloadCV": "Tải xuống CV",
-    "scroll": "Cuộn để khám phá"
-  },
-  "about": {
-    "title": "Về tôi",
-    "titlePrimary": "Về",
-    "titleSecondary": "Tôi",
-    "yearsExperience": "Năm",
-    "lead": "Tôi là một lập trình viên web chuyên nghiệp và có trình độ với 5 năm kinh nghiệm trong phát triển và triển khai.",
-    "tags": {
-      "fullstack": "Full Stack",
-      "vue": "Chuyên gia Vue",
-      "node": "Node.js",
-      "kafka": "Kafka"
+    "nav": {
+        "home": "Trang chủ",
+        "about": "Giới thiệu",
+        "experience": "Kinh nghiệm",
+        "skills": "Kỹ năng",
+        "contact": "Liên hệ"
     },
-    "mainText": "Tôi có kỹ năng sáng tạo và phân tích mạnh mẽ. Tôi luôn nỗ lực làm việc thông minh và trau dồi các kỹ năng liên quan đến nghề nghiệp của mình, đảm bảo sự phát triển và xuất sắc trong mọi dự án tôi đảm nhiệm.",
-    "stats": {
-      "experience": "Năm kinh nghiệm",
-      "projects": "Dự án hoàn thành",
-      "clients": "Khách hàng hài lòng"
+    "hero": {
+        "badge": "Sẵn sàng cho dự án mới",
+        "title": "Lập trình viên & Nhà thiết kế",
+        "developer": "Nhà phát triển",
+        "designer": "Nhà thiết kế",
+        "profileAlt": "Disha Pandey - Hồ sơ Nhà phát triển Full Stack",
+        "logoText": "DISHA",
+        "description": "Tôi là Disha Pandey, chuyên gia tạo ra những trải nghiệm kỹ thuật số cao cấp, kết hợp thẩm mỹ đỉnh cao với kỹ thuật vững chắc.",
+        "viewProjects": "Xem dự án",
+        "getInTouch": "Liên hệ",
+        "downloadCV": "Tải xuống CV",
+        "scroll": "Cuộn để khám phá"
     },
-    "philosophy": {
-      "badge": "Năm tiến bộ",
-      "title": "Người giải quyết vấn đề",
-      "text": "Biến những vấn đề phức tạp thành những giải pháp thanh lịch thông qua mã nguồn sạch và dễ bảo trì."
-    }
-  },
-  "experience": {
-    "title": "Hành trình của tôi",
-    "titlePrimary": "Hành trình",
-    "titleSecondary": "của tôi",
-    "present": "Hiện tại",
-    "jobs": {
-      "lomatechnology": {
-        "role": "Lập trình viên Frontend",
-        "tasks": [
-          "Thiết kế bảng quản trị cho hệ thống CMS.",
-          "Làm việc trên hệ thống HRMS.",
-          "Thiết kế trang web giới thiệu phản hồi cho KK Group.",
-          "Tham gia phát triển trang web nền tảng trò chơi có phản hồi.",
-          "Bảo trì cơ sở mã cũ và thực hiện các cải tiến."
-        ]
-      },
-      "smartdata": {
-        "role": "Lập trình viên liên kết",
-        "tasks": [
-          "Làm việc trên Trained.ai (Hệ thống phản hồi AI/ML) sử dụng React.js và Redux.",
-          "Phát triển các chức năng chính cho Jikapu.com (Nền tảng thương mại điện tử).",
-          "Triển khai xác thực JWT, Token và kiểm tra Auth.",
-          "Phát triển nhiều API và tích hợp với frontend bằng React Hooks."
-        ]
-      },
-      "knksoft": {
-        "role": "Lập trình viên Web sơ cấp",
-        "tasks": [
-          "Làm việc trên dự án cho thuê xe bằng HTML/CSS, PHP và MySQL.",
-          "Tìm hiểu MERN stack thông qua việc bảo trì các trang web đã phát triển."
-        ]
-      }
-    }
-  },
-  "skills": {
-    "title": "Chuyên môn kỹ thuật",
-    "titlePrimary": "Chuyên môn",
-    "titleSecondary": "Kỹ thuật",
-    "subtitle": "Kết hợp sự sáng tạo với mã nguồn để xây dựng thế giới kỹ thuật số liền mạch.",
-    "core": "Công nghệ cốt lõi",
-    "coreDesc": "Thành thạo các framework hiện đại cho các ứng dụng hiệu suất cao.",
-    "statLabel": "Năm thành thạo",
-    "experienceStat": "5+",
-    "tools": "Công cụ & Hạ tầng",
-    "philosophy": "Mã nguồn là thơ ca, và mỗi pixel kể một câu chuyện.",
-    "backend": "Backend & Độ bền",
-    "backendItems": {
-      "node": "Node.js / Express",
-      "db": "MongoDB / SQL",
-      "microservices": "Kafka / Microservices"
-    }
-  },
-  "contact": {
-    "title": "Kết nối",
-    "description": "Bạn quan tâm đến việc hợp tác hay chỉ muốn gửi lời chào? Hòm thư của tôi luôn rộng mở.",
-    "methods": {
-      "email": "Email",
-      "whatsapp": "WhatsApp",
-      "telegram": "Telegram",
-      "linkedin": "LinkedIn"
+    "about": {
+        "title": "Về tôi",
+        "titlePrimary": "Về",
+        "titleSecondary": "Tôi",
+        "yearsExperience": "Năm",
+        "lead": "Tôi là một lập trình viên web chuyên nghiệp và có trình độ với 5 năm kinh nghiệm trong phát triển và triển khai.",
+        "tags": {
+            "fullstack": "Full Stack",
+            "vue": "Chuyên gia Vue",
+            "node": "Node.js",
+            "kafka": "Kafka"
+        },
+        "mainText": "Tôi có kỹ năng sáng tạo và phân tích mạnh mẽ. Tôi luôn nỗ lực làm việc thông minh và trau dồi các kỹ năng liên quan đến nghề nghiệp của mình, đảm bảo sự phát triển và xuất sắc trong mọi dự án tôi đảm nhiệm.",
+        "stats": {
+            "experience": "Năm kinh nghiệm",
+            "projects": "Dự án hoàn thành",
+            "clients": "Khách hàng hài lòng"
+        },
+        "philosophy": {
+            "badge": "Năm tiến bộ",
+            "title": "Người giải quyết vấn đề",
+            "text": "Biến những vấn đề phức tạp thành những giải pháp thanh lịch thông qua mã nguồn sạch và dễ bảo trì."
+        }
     },
-    "form": {
-      "title": "Gửi tin nhắn",
-      "subtitle": "Tôi sẽ phản hồi trong vòng 24 giờ.",
-      "nameLabel": "Tên",
-      "namePlaceholder": "Tên của bạn",
-      "emailLabel": "Email",
-      "emailPlaceholder": "Email của bạn",
-      "messageLabel": "Tin nhắn",
-      "messagePlaceholder": "Tôi có thể giúp gì cho bạn?",
-      "submit": "Gửi tin nhắn",
-      "sending": "Đang gửi...",
-      "success": "Cảm ơn bạn đã nhắn tin! Tôi sẽ sớm phản hồi cho bạn."
+    "experience": {
+        "title": "Hành trình của tôi",
+        "titlePrimary": "Hành trình",
+        "titleSecondary": "của tôi",
+        "present": "Hiện tại",
+        "jobs": {
+            "lomatechnology": {
+                "role": "Lập trình viên Frontend",
+                "tasks": [
+                    "Tham gia phát triển giao diện đáp ứng cho website nền tảng game.",
+                    "Thiết kế hệ thống CMS.",
+                    "Thiết kế hệ thống HRMS.",
+                    "Thiết kế nhiều bảng quản trị nội bộ.",
+                    "Bảo trì cơ sở mã cũ và thực hiện các cải tiến."
+                ]
+            },
+            "smartdata": {
+                "role": "Lập trình viên liên kết",
+                "tasks": [
+                    "Làm việc trên Trained.ai (Hệ thống phản hồi AI/ML) sử dụng React.js và Redux.",
+                    "Phát triển các chức năng chính cho Jikapu.com (Nền tảng thương mại điện tử).",
+                    "Triển khai xác thực JWT, Token và kiểm tra Auth.",
+                    "Phát triển nhiều API và tích hợp với frontend bằng React Hooks."
+                ]
+            },
+            "knksoft": {
+                "role": "Lập trình viên Web sơ cấp",
+                "tasks": [
+                    "Làm việc trên dự án cho thuê xe bằng HTML/CSS, PHP và MySQL.",
+                    "Tìm hiểu MERN stack thông qua việc bảo trì các trang web đã phát triển."
+                ]
+            }
+        }
+    },
+    "skills": {
+        "title": "Chuyên môn kỹ thuật",
+        "titlePrimary": "Chuyên môn",
+        "titleSecondary": "Kỹ thuật",
+        "subtitle": "Kết hợp sự sáng tạo với mã nguồn để xây dựng thế giới kỹ thuật số liền mạch.",
+        "core": "Công nghệ cốt lõi",
+        "coreDesc": "Thành thạo các framework hiện đại cho các ứng dụng hiệu suất cao.",
+        "statLabel": "Năm thành thạo",
+        "experienceStat": "5+",
+        "tools": "Công cụ & Hạ tầng",
+        "philosophy": "Mã nguồn là thơ ca, và mỗi pixel kể một câu chuyện.",
+        "backend": "Backend & Độ bền",
+        "backendItems": {
+            "node": "Node.js / Express",
+            "db": "MongoDB / SQL",
+            "microservices": "Kafka / Microservices"
+        }
+    },
+    "contact": {
+        "title": "Kết nối",
+        "description": "Bạn quan tâm đến việc hợp tác hay chỉ muốn gửi lời chào? Hòm thư của tôi luôn rộng mở.",
+        "methods": {
+            "email": "Email",
+            "whatsapp": "WhatsApp",
+            "telegram": "Telegram",
+            "linkedin": "LinkedIn"
+        },
+        "form": {
+            "title": "Gửi tin nhắn",
+            "subtitle": "Tôi sẽ phản hồi trong vòng 24 giờ.",
+            "nameLabel": "Tên",
+            "namePlaceholder": "Tên của bạn",
+            "emailLabel": "Email",
+            "emailPlaceholder": "Email của bạn",
+            "messageLabel": "Tin nhắn",
+            "messagePlaceholder": "Tôi có thể giúp gì cho bạn?",
+            "submit": "Gửi tin nhắn",
+            "sending": "Đang gửi...",
+            "success": "Cảm ơn bạn đã nhắn tin! Tôi sẽ sớm phản hồi cho bạn."
+        }
+    },
+    "footer": {
+        "desc": "Thiết kế và xây dựng những trải nghiệm kỹ thuật số cao cấp.",
+        "nav": "Danh mục",
+        "connect": "Kết nối",
+        "crafted": "Được tạo ra bằng tâm huyết.",
+        "github": "GitHub",
+        "copyrightName": "Disha Pandey"
     }
-  },
-  "footer": {
-    "desc": "Thiết kế và xây dựng những trải nghiệm kỹ thuật số cao cấp.",
-    "nav": "Danh mục",
-    "connect": "Kết nối",
-    "crafted": "Được tạo ra bằng tâm huyết.",
-    "github": "GitHub",
-    "copyrightName": "Disha Pandey"
-  }
 }

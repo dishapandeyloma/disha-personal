@@ -3,36 +3,54 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-content">
-          <h2 class="section-title">{{ $t('about.titlePrimary') }} <span class="text-gradient">{{ $t('about.titleSecondary') }}</span></h2>
+          <h2 class="section-title">
+            {{ $t("about.titlePrimary") }}
+            <span class="text-gradient">{{ $t("about.titleSecondary") }}</span>
+          </h2>
           <p class="lead">
-            {{ $t('about.lead') }}
+            {{ $t("about.lead") }}
           </p>
           <div class="skills-mini">
-            <div v-for="tag in ['fullstack', 'vue', 'node', 'kafka']" :key="tag" class="skill-tag">
-              {{ $t('about.tags.' + tag) }}
+            <div
+              v-for="tag in ['fullstack', 'vue', 'node', 'kafka']"
+              :key="tag"
+              class="skill-tag"
+            >
+              {{ $t("about.tags." + tag) }}
             </div>
           </div>
           <p class="main-text">
-            {{ $t('about.mainText') }}
+            {{ $t("about.mainText") }}
           </p>
           <div class="stats-grid">
-            <div v-for="stat in stats" :key="stat.key" class="stat-card glass-card">
+            <div
+              v-for="stat in stats"
+              :key="stat.key"
+              class="stat-card glass-card"
+            >
               <span class="stat-num">{{ stat.num }}</span>
               <span class="stat-label">{{ stat.label }}</span>
             </div>
           </div>
         </div>
-        
+
         <div class="about-visual">
           <div class="visual-container glass-card">
             <div class="experience-badge">
               <span class="years">5</span>
-              <span class="text" v-html="$t('about.yearsExperience') + '<br>' + $t('about.philosophy.badge')"></span>
+              <span
+                class="text"
+                v-html="
+                  $t('about.yearsExperience') +
+                  '<br>' +
+                  $t('about.philosophy.badge')
+                "
+              ></span>
             </div>
             <div class="philosophy-box">
               <Icon name="ri:code-s-slash-line" size="40" class="icon" />
-              <h3>{{ $t('about.philosophy.title') }}</h3>
-              <p>{{ $t('about.philosophy.text') }}</p>
+              <h3>{{ $t("about.philosophy.title") }}</h3>
+              <p>{{ $t("about.philosophy.text") }}</p>
             </div>
           </div>
         </div>
@@ -42,45 +60,45 @@
 </template>
 
 <script setup>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-const { t } = useI18n()
+const { t } = useI18n();
 
 const stats = computed(() => [
-  { num: '5+', label: t('about.stats.experience'), key: 'exp' },
-  { num: '20+', label: t('about.stats.projects'), key: 'proj' },
-  { num: '10+', label: t('about.stats.clients'), key: 'client' }
-])
+  { num: "5+", label: t("about.stats.experience"), key: "exp" },
+  { num: "10+", label: t("about.stats.projects"), key: "proj" },
+  { num: "6+", label: t("about.stats.clients"), key: "client" },
+]);
 
 onMounted(() => {
-  gsap.from('.about-content > *', {
+  gsap.from(".about-content > *", {
     scrollTrigger: {
-      trigger: '.about-section',
-      start: 'top 80%',
+      trigger: ".about-section",
+      start: "top 80%",
     },
     opacity: 0,
     y: 30,
     duration: 1,
     stagger: 0.15,
-    ease: 'power3.out',
-    clearProps: 'all'
-  })
+    ease: "power3.out",
+    clearProps: "all",
+  });
 
-  gsap.from('.about-visual', {
+  gsap.from(".about-visual", {
     scrollTrigger: {
-      trigger: '.about-visual',
-      start: 'top 80%',
+      trigger: ".about-visual",
+      start: "top 80%",
     },
     opacity: 0,
     scale: 0.9,
     duration: 1.2,
-    ease: 'power2.out',
-    clearProps: 'all'
-  })
-})
+    ease: "power2.out",
+    clearProps: "all",
+  });
+});
 </script>
 
 <style scoped>
