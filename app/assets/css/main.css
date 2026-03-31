@@ -3,18 +3,18 @@
 
 :root {
   /* HSL Color System - Sophisticated & High Contrast */
-  --h-primary: 158;
-  --s-primary: 95%;
-  --l-primary: 42%; /* Emerald Green */
+  --h-primary: 262;
+  --s-primary: 80%;
+  --l-primary: 60%; /* Royal Purple */
   
-  --h-secondary: 142;
-  --s-secondary: 76%;
-  --l-secondary: 36%; /* Deep Forest */
+  --h-secondary: 243;
+  --s-secondary: 75%;
+  --l-secondary: 58%; /* Deep Indigo */
 
   /* Default (Dark Mode) Variables */
-  --bg-color: hsl(240, 10%, 4%);
-  --surface-color: hsl(240, 10%, 8%);
-  --surface-hover: hsl(240, 10%, 12%);
+  --bg-color: hsl(240, 15%, 4%);
+  --surface-color: hsl(240, 15%, 8%);
+  --surface-hover: hsl(240, 15%, 12%);
   --text-primary: hsl(0, 0%, 100%);
   --text-secondary: hsl(240, 5%, 65%);
   --border-color: hsla(0, 0%, 100%, 0.08);
@@ -153,7 +153,7 @@ h2 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 2rem;
     var(--primary), 
     var(--secondary), 
     var(--primary),
-    #a7ff83
+    #ff83d5
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;

@@ -101,7 +101,7 @@ const selectedLocale = computed({
 
 .switcher-trigger:hover,
 .switcher-trigger.is-open {
-  border-color: #10b981 !important;
+  border-color: var(--primary) !important;
 }
 
 .current-flag {
@@ -161,7 +161,7 @@ const selectedLocale = computed({
 
 .active-indicator {
   margin-left: auto;
-  color: #10b981;
+  color: var(--primary);
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -196,8 +196,13 @@ const selectedLocale = computed({
 .dark-mode .select-item[data-state="checked"],
 .dark-mode .select-item[data-highlighted],
 .dark-mode .select-item:hover {
-  background: rgba(16, 185, 129, 0.1) !important;
-  color: #10b981 !important;
+  background: hsla(
+    var(--h-primary),
+    var(--s-primary),
+    var(--l-primary),
+    0.1
+  ) !important;
+  color: var(--primary) !important;
 }
 
 .light-mode .select-content {
@@ -226,8 +231,13 @@ const selectedLocale = computed({
 .light-mode .select-item[data-state="checked"],
 .light-mode .select-item[data-highlighted],
 .light-mode .select-item:hover {
-  background: rgba(16, 185, 129, 0.1) !important;
-  color: #10b981 !important;
+  background: hsla(
+    var(--h-primary),
+    var(--s-primary),
+    var(--l-primary),
+    0.1
+  ) !important;
+  color: var(--primary) !important;
 }
 
 /* Force hide scrollbars and prevent overflow on all inner containers */
@@ -289,7 +299,7 @@ const selectedLocale = computed({
 
   .light-mode .select-content {
     padding: 0.35rem !important;
-    min-width: 130px !important;
+    min-width: 80px !important;
   }
 
   .light-mode .select-item {
