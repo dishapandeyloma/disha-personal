@@ -8,7 +8,7 @@
         base: 'select-base',
         content: 'select-content',
         item: 'select-item',
-        itemLabel: 'select-item-label'
+        itemLabel: 'select-item-label',
       }"
       class="custom-select"
     >
@@ -38,39 +38,39 @@
 </template>
 
 <script setup>
-const { locale, locales, setLocale } = useI18n()
+const { locale, locales, setLocale } = useI18n();
 
 const flagMap = {
-  'en-US': 'circle-flags:uk',
-  'zh-CN': 'circle-flags:cn',
-  'de-DE': 'circle-flags:de',
-  'km-KH': 'circle-flags:kh',
-  'th-TH': 'circle-flags:th',
-  'vi-VN': 'circle-flags:vn',
-  'ja-JP': 'circle-flags:jp'
-}
+  "en-US": "circle-flags:uk",
+  "zh-CN": "circle-flags:cn",
+  "de-DE": "circle-flags:de",
+  "km-KH": "circle-flags:kh",
+  "th-TH": "circle-flags:th",
+  "vi-VN": "circle-flags:vn",
+  "ja-JP": "circle-flags:jp",
+};
 
-const getFlag = (code) => flagMap[code] || 'ri:global-line'
+const getFlag = (code) => flagMap[code] || "ri:global-line";
 
 const getLocaleName = (code) => {
-  const loc = locales.value.find(l => l.code === code)
-  return loc ? loc.name : (code === 'en-US' ? 'English' : code)
-}
+  const loc = locales.value.find((l) => l.code === code);
+  return loc ? loc.name : code === "en-US" ? "English" : code;
+};
 
 const items = computed(() => {
-  return (locales.value || []).map(l => ({
+  return (locales.value || []).map((l) => ({
     label: l.name,
     value: l.code,
-    flag: flagMap[l.code] || 'ri:global-line'
-  }))
-})
+    flag: flagMap[l.code] || "ri:global-line",
+  }));
+});
 
 const selectedLocale = computed({
   get: () => locale.value,
   set: (val) => {
-    if (val) setLocale(val)
-  }
-})
+    if (val) setLocale(val);
+  },
+});
 </script>
 
 <style scoped>
@@ -99,7 +99,8 @@ const selectedLocale = computed({
   color: #000000 !important;
 }
 
-.switcher-trigger:hover, .switcher-trigger.is-open {
+.switcher-trigger:hover,
+.switcher-trigger.is-open {
   border-color: #10b981 !important;
 }
 
@@ -135,14 +136,14 @@ const selectedLocale = computed({
 .item-inner {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   width: 100%;
 }
 
 .item-flag {
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .item-name {
@@ -174,17 +175,17 @@ const selectedLocale = computed({
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 12px !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9) !important;
-  padding: 0.3rem !important;
+  padding: 0.6rem !important;
   max-height: none !important;
   overflow: hidden !important;
   width: max-content !important;
-  min-width: 140px !important;
+  min-width: 160px !important;
 }
 
 .dark-mode .select-item {
-  margin: 0.1rem 0 !important;
-  border-radius: 8px !important;
-  padding: 0.6rem 0.9rem !important;
+  margin: 0.15rem 0 !important;
+  border-radius: 6px !important;
+  padding: 0.55rem 0.85rem !important;
   background: transparent !important;
   color: rgba(255, 255, 255, 0.8) !important;
   transition: all 0.2s ease !important;
@@ -199,9 +200,39 @@ const selectedLocale = computed({
   color: #10b981 !important;
 }
 
+.light-mode .select-content {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08) !important;
+  padding: 0.6rem !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  width: max-content !important;
+  min-width: 160px !important;
+}
+
+.light-mode .select-item {
+  margin: 0.15rem 0 !important;
+  border-radius: 6px !important;
+  padding: 0.55rem 0.85rem !important;
+  background: transparent !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  transition: all 0.2s ease !important;
+  border: none !important;
+  white-space: nowrap !important;
+}
+
+.light-mode .select-item[data-state="checked"],
+.light-mode .select-item[data-highlighted],
+.light-mode .select-item:hover {
+  background: rgba(16, 185, 129, 0.1) !important;
+  color: #10b981 !important;
+}
+
 /* Force hide scrollbars and prevent overflow on all inner containers */
-.select-content, 
-.select-content *, 
+.select-content,
+.select-content *,
 .select-content [data-radix-scroll-area-viewport],
 .select-content [data-radix-scroll-area-content] {
   overflow: hidden !important;
@@ -231,7 +262,8 @@ const selectedLocale = computed({
   --tw-ring-shadow: none !important;
 }
 
-.dark-mode .select-base, .light-mode .select-base {
+.dark-mode .select-base,
+.light-mode .select-base {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -240,5 +272,30 @@ const selectedLocale = computed({
 /* Hide duplicate chevron */
 .select-base [data-slot="trailing"] {
   display: none !important;
+}
+
+/* Compact styles for smaller screens */
+@media (max-width: 640px) {
+  .dark-mode .select-content {
+    padding: 0.35rem !important;
+    min-width: 80px !important;
+  }
+
+  .dark-mode .select-item {
+    margin: 0.08rem 0 !important;
+    padding: 0.4rem 0.55rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .light-mode .select-content {
+    padding: 0.35rem !important;
+    min-width: 130px !important;
+  }
+
+  .light-mode .select-item {
+    margin: 0.08rem 0 !important;
+    padding: 0.4rem 0.55rem !important;
+    font-size: 0.85rem !important;
+  }
 }
 </style>
