@@ -8,9 +8,9 @@
     },
     "hero": {
         "badge": "案件受付中",
-        "title": "開発者 & デザイナー",
-        "developer": "開発者",
-        "designer": "デザイナー",
+        "title": "フルスタック開発者",
+        "developer": "フルスタック",
+        "designer": "開発者",
         "profileAlt": "Disha Pandey - フルスタック開発者のプロフィール",
         "logoText": "DISHA",
         "description": "私は Disha Pandey です。ハイエンドな美学と堅牢なエンジニアリングを融合させた、プレミアムなデジタル体験の創出を専門としています。",

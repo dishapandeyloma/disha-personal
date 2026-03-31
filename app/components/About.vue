@@ -81,8 +81,8 @@ onMounted(() => {
     },
     opacity: 0,
     y: 30,
-    duration: 1,
-    stagger: 0.15,
+    duration: 0.6,
+    stagger: 0.1,
     ease: "power3.out",
     clearProps: "all",
   });
@@ -94,7 +94,7 @@ onMounted(() => {
     },
     opacity: 0,
     scale: 0.9,
-    duration: 1.2,
+    duration: 0.7,
     ease: "power2.out",
     clearProps: "all",
   });
@@ -110,7 +110,7 @@ onMounted(() => {
 }
 
 .lead {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   line-height: 1.4;
   margin-bottom: 2rem;
   color: var(--text-primary);
@@ -134,7 +134,7 @@ onMounted(() => {
 }
 
 .main-text {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: var(--text-secondary);
   margin-bottom: 3.5rem;
   line-height: 1.7;
@@ -153,7 +153,7 @@ onMounted(() => {
 
 .stat-num {
   display: block;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1;
@@ -191,7 +191,7 @@ onMounted(() => {
 
 .experience-badge .years {
   display: block;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
   color: var(--primary);
   line-height: 1;
@@ -205,7 +205,7 @@ onMounted(() => {
 }
 
 .philosophy-box h3 {
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   margin: 1rem 0;
 }
 
@@ -227,9 +227,6 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
-  .lead {
-    font-size: 1.25rem;
-  }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -243,9 +240,6 @@ onMounted(() => {
     top: 1rem;
     right: 1rem;
     padding: 1rem;
-  }
-  .experience-badge .years {
-    font-size: 2rem;
   }
 }
 

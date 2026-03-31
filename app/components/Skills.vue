@@ -87,8 +87,8 @@ onMounted(() => {
     },
     opacity: 0,
     y: 30,
-    duration: 1,
-    stagger: 0.15,
+    duration: 0.6,
+    stagger: 0.1,
     ease: 'power3.out',
     clearProps: 'all'
   })
@@ -100,8 +100,8 @@ onMounted(() => {
     },
     opacity: 0,
     y: 40,
-    duration: 1,
-    stagger: 0.15,
+    duration: 0.6,
+    stagger: 0.1,
     ease: 'power3.out',
     clearProps: 'all'
   })

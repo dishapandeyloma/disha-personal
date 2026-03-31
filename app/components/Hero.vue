@@ -7,7 +7,7 @@
         </div>
         <h1 class="main-title">
           {{ $t("hero.developer") }} <br />
-          <span class="text-gradient">& {{ $t("hero.designer") }}</span>
+          <span class="text-gradient">{{ $t("hero.designer") }}</span>
         </h1>
         <p class="description">
           {{ $t("hero.description") }}
@@ -57,7 +57,7 @@
 import { gsap } from "gsap";
 
 onMounted(() => {
-  const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.2 } });
+  const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 0.8 } });
 
   tl.from(".hero-badge", { opacity: 0, y: 20, delay: 0.5 })
     .from(".main-title", { opacity: 0, y: 40 }, "-=1")
@@ -89,7 +89,7 @@ onMounted(() => {
   background: var(--surface-hover);
   border: 1px solid var(--border-color);
   border-radius: 100px;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -102,7 +102,7 @@ onMounted(() => {
 }
 
 .description {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 2vw, 1.4rem);
   color: var(--text-secondary);
   max-width: 600px;
   margin-bottom: 4rem;
@@ -279,7 +279,6 @@ onMounted(() => {
   .description {
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.2rem;
     margin-bottom: 2.5rem;
   }
   .hero-actions {
@@ -301,15 +300,10 @@ onMounted(() => {
   .hero-section {
     padding-top: 80px;
   }
-  .main-title {
-    font-size: 3.5rem;
-  }
   .hero-badge {
     margin-bottom: 1.5rem;
-    font-size: 0.75rem;
   }
   .description {
-    font-size: 1.1rem;
     margin-bottom: 2rem;
   }
   .hero-actions {

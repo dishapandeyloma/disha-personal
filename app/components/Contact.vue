@@ -158,26 +158,26 @@ onMounted(() => {
   tl.from('.section-header > *', {
     opacity: 0,
     y: 30,
-    duration: 0.8,
-    stagger: 0.2,
+    duration: 0.5,
+    stagger: 0.1,
     ease: 'power3.out',
     clearProps: 'all'
   })
   .from('.method-card', {
     opacity: 0,
     x: -30,
-    duration: 0.6,
-    stagger: 0.1,
+    duration: 0.4,
+    stagger: 0.05,
     ease: 'power3.out',
     clearProps: 'all'
-  }, '-=0.4')
+  }, '-=0.3')
   .from('.contact-form-container', {
     opacity: 0,
     x: 30,
-    duration: 0.8,
+    duration: 0.5,
     ease: 'power3.out',
     clearProps: 'all'
-  }, '-=0.6')
+  }, '-=0.4')
 
   // Background blobs animation
   gsap.to('.blob-1', {
@@ -250,7 +250,7 @@ onMounted(() => {
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
@@ -263,7 +263,7 @@ onMounted(() => {
   max-width: 600px;
   margin: 0 auto;
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
 }
 
 .contact-grid {
@@ -312,6 +312,12 @@ onMounted(() => {
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+  .method-card:hover {
+    transform: scale(1.01);
+  }
+}
+
 .method-card:hover::before {
   transform: translateX(100%);
 }
@@ -358,9 +364,10 @@ onMounted(() => {
 }
 
 .method-value {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
   color: var(--text-primary);
   font-weight: 700;
+  word-break: break-word;
 }
 
 .method-arrow {
@@ -560,17 +567,26 @@ onMounted(() => {
   }
   
   .contact-form-container {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
   
   .method-card {
-    padding: 1.25rem;
+    padding: 1rem;
   }
   
   .method-icon-wrapper {
-    width: 48px;
-    height: 48px;
-    margin-right: 1rem;
+    width: 44px;
+    height: 44px;
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+  }
+
+  .method-value {
+    font-size: 0.95rem;
+  }
+
+  .method-arrow {
+    display: none;
   }
 }
 
