@@ -6,9 +6,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      emailjsServiceId: "service_mc4a317",
-      emailjsTemplateId: "template_5ugl1jn",
-      emailjsPublicKey: "br7Nn_0J3sMhA_cmc",
+      emailjsServiceId: "", // Default to empty, overridden by NUXT_PUBLIC_EMAILJS_SERVICE_ID
+      emailjsTemplateId: "", // Default to empty, overridden by NUXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      emailjsPublicKey: "", // Default to empty, overridden by NUXT_PUBLIC_EMAILJS_PUBLIC_KEY
     },
   },
   css: ["~/assets/css/main.css"],
