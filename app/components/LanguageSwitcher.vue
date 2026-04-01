@@ -93,7 +93,7 @@ const selectedLocale = computed({
   backdrop-filter: blur(12px);
 }
 
-.light-mode .switcher-trigger {
+.light .switcher-trigger {
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   color: #000000 !important;
@@ -205,7 +205,7 @@ const selectedLocale = computed({
   color: var(--primary) !important;
 }
 
-.light-mode .select-content {
+.light .select-content {
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-radius: 12px !important;
@@ -217,7 +217,7 @@ const selectedLocale = computed({
   min-width: 160px !important;
 }
 
-.light-mode .select-item {
+.light .select-item {
   margin: 0.15rem 0 !important;
   border-radius: 6px !important;
   padding: 0.55rem 0.85rem !important;
@@ -228,9 +228,9 @@ const selectedLocale = computed({
   white-space: nowrap !important;
 }
 
-.light-mode .select-item[data-state="checked"],
-.light-mode .select-item[data-highlighted],
-.light-mode .select-item:hover {
+.light .select-item[data-state="checked"],
+.light .select-item[data-highlighted],
+.light .select-item:hover {
   background: hsla(
     var(--h-primary),
     var(--s-primary),
@@ -273,7 +273,7 @@ const selectedLocale = computed({
 }
 
 .dark-mode .select-base,
-.light-mode .select-base {
+.light .select-base {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -297,12 +297,12 @@ const selectedLocale = computed({
     font-size: 0.85rem !important;
   }
 
-  .light-mode .select-content {
+  .light .select-content {
     padding: 0.35rem !important;
     min-width: 80px !important;
   }
 
-  .light-mode .select-item {
+  .light .select-item {
     margin: 0.08rem 0 !important;
     padding: 0.4rem 0.55rem !important;
     font-size: 0.85rem !important;

@@ -60,17 +60,21 @@ const experiences = computed(() => [
 ])
 
 onMounted(() => {
-  gsap.from('.section-title', {
-    scrollTrigger: {
-      trigger: '.experience-section',
-      start: 'top 80%',
-    },
-    opacity: 0,
-    y: 30,
-    duration: 0.6,
-    ease: 'power3.out',
-    clearProps: 'all'
-  })
+  gsap.fromTo('.section-title', 
+    { opacity: 0, y: 30 },
+    {
+      scrollTrigger: {
+        trigger: '.experience-section',
+        start: 'top 80%',
+        once: true,
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      ease: 'power3.out',
+      clearProps: 'transform'
+    }
+  )
 
   gsap.fromTo('.experience-card', 
     { opacity: 0, x: -30 },
@@ -78,19 +82,25 @@ onMounted(() => {
       scrollTrigger: {
         trigger: '.experience-list',
         start: 'top 85%',
+        once: true,
       },
       opacity: 1,
       x: 0,
       duration: 0.6,
       stagger: 0.1,
       ease: 'power3.out',
-      clearProps: 'all' // Clear GSAP styles after animation
+      clearProps: 'transform' // Clear GSAP transform styles after animation, keep opacity
     }
   )
 })
 </script>
 
 <style scoped>
+.section-title {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
 .experience-list {
   display: flex;
   flex-direction: column;
@@ -102,6 +112,8 @@ onMounted(() => {
 .experience-card {
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateX(-30px);
 }
 
 .card-header {

@@ -84,10 +84,12 @@
 <script setup>
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import emailjs from '@emailjs/browser'
 
 gsap.registerPlugin(ScrollTrigger)
 const isSending = ref(false)
 const { t } = useI18n()
+const toast = useToast()
 
 const form = ref({
   name: '',
@@ -102,8 +104,8 @@ const contactMethods = computed(() => [
     value: 'disha4037@gmail.com',
     icon: 'lucide:mail',
     link: 'mailto:disha4037@gmail.com',
-    color: '#3b82f6',
-    colorRgb: '59, 130, 246'
+    color: '#8b5cf6',
+    colorRgb: '139, 92, 246'
   },
   {
     name: 'WhatsApp',
@@ -111,8 +113,8 @@ const contactMethods = computed(() => [
     value: '+91 87552 69268',
     icon: 'lucide:message-circle',
     link: 'https://wa.me/918755269268',
-    color: '#3b82f6',
-    colorRgb: '59, 130, 246'
+    color: '#8b5cf6',
+    colorRgb: '139, 92, 246'
   },
   {
     name: 'Telegram',
@@ -120,8 +122,8 @@ const contactMethods = computed(() => [
     value: '@dishadp',
     icon: 'lucide:send',
     link: 'https://t.me/dishadp',
-    color: '#3b82f6',
-    colorRgb: '59, 130, 246'
+    color: '#8b5cf6',
+    colorRgb: '139, 92, 246'
   },
   {
     name: 'LinkedIn',
@@ -129,19 +131,80 @@ const contactMethods = computed(() => [
     value: 'disha-pandey',
     icon: 'lucide:linkedin',
     link: 'https://www.linkedin.com/in/disha-pandey-117717152/',
-    color: '#3b82f6',
-    colorRgb: '59, 130, 246'
+    color: '#8b5cf6',
+    colorRgb: '139, 92, 246'
   }
 ])
 
 const handleSubmit = async () => {
   isSending.value = true
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    console.log('Form submitted:', form.value)
-    alert(t('contact.form.success'))
+    const config = useRuntimeConfig()
+    
+    if (!config.public.emailjsServiceId || !config.public.emailjsTemplateId || !config.public.emailjsPublicKey) {
+      console.error('EmailJS is not configured properly in .env')
+      toast.add({
+        title: 'Error',
+        description: 'Email configuration is missing. Please contact the administrator.',
+        icon: 'lucide:x-circle',
+        ui: {
+          root: 'bg-black/40 backdrop-blur-3xl border border-red-500/20 rounded-[1.5rem] p-6 shadow-2xl ring-1 ring-inset ring-white/10 flex items-start gap-5 max-w-sm relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-red-500/5 before:to-transparent before:-z-10',
+          title: 'text-red-400 font-heading font-bold text-2xl tracking-tighter mb-1',
+          description: 'text-white/60 text-[15px] font-medium leading-relaxed',
+          icon: 'text-red-500 w-10 h-10 shrink-0',
+          close: 'text-white/30 hover:text-red-500 hover:bg-red-500/10 p-2 rounded-xl transition-all'
+        }
+      })
+      return
+    }
+
+    const templateParams = {
+      name: form.value.name,
+      email: form.value.email,
+      message: form.value.message,
+      title: 'Message from Portfolio',
+      time: new Date().toLocaleString(),
+      // Backward compatibility keys
+      from_name: form.value.name,
+      from_email: form.value.email,
+      reply_to: form.value.email,
+    }
+
+    await emailjs.send(
+      config.public.emailjsServiceId,
+      config.public.emailjsTemplateId,
+      templateParams,
+      config.public.emailjsPublicKey
+    )
+
+    console.log('Email sent successfully via EmailJS')
+    toast.add({
+      title: 'Success!',
+      description: t('contact.form.success'),
+      icon: 'lucide:check-circle',
+      ui: {
+        root: 'bg-black/40 backdrop-blur-3xl border border-white/10 rounded-[1.5rem] p-6 shadow-2xl ring-1 ring-inset ring-white/5 flex items-start gap-5 max-w-sm relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-[var(--primary)]/10 before:to-transparent before:-z-10',
+        title: 'text-white font-heading font-bold text-2xl tracking-tighter mb-1',
+        description: 'text-white/60 text-[15px] font-medium leading-relaxed',
+        icon: 'text-[var(--primary)] w-10 h-10 shrink-0',
+        close: 'text-white/30 hover:text-[var(--primary)] hover:bg-[var(--primary)]/10 p-2 rounded-xl transition-all'
+      }
+    })
     form.value = { name: '', email: '', message: '' }
+  } catch (error) {
+    console.error('Failed to send email:', error)
+    toast.add({
+      title: 'Error',
+      description: 'Oops! Failed to send email. Please try again later.',
+      icon: 'lucide:x-circle',
+      ui: {
+        root: 'bg-black/40 backdrop-blur-3xl border border-red-500/20 rounded-[1.5rem] p-6 shadow-2xl ring-1 ring-inset ring-white/10 flex items-start gap-5 max-w-sm relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-br before:from-red-500/5 before:to-transparent before:-z-10',
+        title: 'text-red-400 font-heading font-bold text-2xl tracking-tighter mb-1',
+        description: 'text-white/60 text-[15px] font-medium leading-relaxed',
+        icon: 'text-red-500 w-10 h-10 shrink-0',
+        close: 'text-white/30 hover:text-red-500 hover:bg-red-500/10 p-2 rounded-xl transition-all'
+      }
+    })
   } finally {
     isSending.value = false
   }
@@ -151,32 +214,39 @@ onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#contact',
-      start: 'top 70%',
+      start: 'top 90%',
+      once: true,
     }
   })
 
-  tl.from('.section-header > *', {
-    opacity: 0,
-    y: 30,
+  tl.fromTo('.section-header > *', 
+  { opacity: 0, y: 30 },
+  {
+    opacity: 1,
+    y: 0,
     duration: 0.5,
     stagger: 0.1,
     ease: 'power3.out',
-    clearProps: 'all'
+    clearProps: 'transform'
   })
-  .from('.method-card', {
-    opacity: 0,
-    x: -30,
+  .fromTo('.method-card', 
+  { opacity: 0, x: -30 },
+  {
+    opacity: 1,
+    x: 0,
     duration: 0.4,
     stagger: 0.05,
     ease: 'power3.out',
-    clearProps: 'all'
+    clearProps: 'transform'
   }, '-=0.3')
-  .from('.contact-form-container', {
-    opacity: 0,
-    x: 30,
+  .fromTo('.contact-form-container', 
+  { opacity: 0, x: 30 },
+  {
+    opacity: 1,
+    x: 0,
     duration: 0.5,
     ease: 'power3.out',
-    clearProps: 'all'
+    clearProps: 'transform'
   }, '-=0.4')
 
   // Background blobs animation
@@ -225,6 +295,7 @@ onMounted(() => {
   width: 400px;
   height: 400px;
   border-radius: 50%;
+  will-change: transform;
 }
 
 .blob-1 {
@@ -234,7 +305,7 @@ onMounted(() => {
 }
 
 .blob-2 {
-  background: #6366f1;
+  background: var(--secondary);
   bottom: -100px;
   right: -100px;
 }
@@ -247,6 +318,10 @@ onMounted(() => {
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
+}
+
+.section-header > * {
+  opacity: 0;
 }
 
 .section-title {
@@ -291,6 +366,8 @@ onMounted(() => {
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  will-change: transform, opacity;
+  opacity: 0;
 }
 
 .method-card::before {
@@ -337,16 +414,16 @@ onMounted(() => {
   box-shadow: inset 0 0 0 1px rgba(var(--accent-color-rgb), 0.1);
 }
 
-.light-mode .method-icon-wrapper {
+.light .method-icon-wrapper {
   background: rgba(var(--accent-color-rgb), 0.08);
   box-shadow: inset 0 0 0 1px rgba(var(--accent-color-rgb), 0.05);
 }
 
 .method-card:hover .method-icon-wrapper {
-  background: #3b82f6;
+  background: var(--primary);
   color: white;
   transform: rotate(10deg);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 20px hsla(var(--h-primary), var(--s-primary), var(--l-primary), 0.4);
 }
 
 .method-info {
@@ -388,6 +465,8 @@ onMounted(() => {
   border: 1px solid var(--border-color);
   background: var(--glass-color);
   backdrop-filter: blur(10px);
+  will-change: transform, opacity;
+  opacity: 0;
 }
 
 .form-header {
@@ -442,7 +521,7 @@ onMounted(() => {
   transition: all 0.3s ease;
 }
 
-.light-mode .input-icon {
+.light .input-icon {
   opacity: 0.8;
 }
 
@@ -524,7 +603,7 @@ onMounted(() => {
   box-shadow: 0 10px 25px -5px hsla(var(--h-primary), var(--s-primary), var(--l-primary), 0.4);
 }
 
-.light-mode .submit-btn:hover:not(:disabled) {
+.light .submit-btn:hover:not(:disabled) {
   box-shadow: 0 10px 25px -5px hsla(var(--h-primary), var(--s-primary), var(--l-primary), 0.3);
 }
 
@@ -590,11 +669,11 @@ onMounted(() => {
   }
 }
 
-.light-mode .glass-card {
+.light .glass-card {
   box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.05);
 }
 
-.light-mode .glass-card:hover {
+.light .glass-card:hover {
   box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.1);
 }
 </style>

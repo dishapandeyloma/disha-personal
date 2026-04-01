@@ -50,7 +50,7 @@ const { t } = useI18n();
 gsap.registerPlugin(ScrollTrigger);
 
 const isScrolled = ref(false);
-const isMenuOpen = ref(false);
+const isMenuOpen = useState('isMenuOpen', () => false);
 const activeSection = ref("hero");
 const navLinksRef = ref(null);
 const navPillRef = ref(null);
@@ -169,7 +169,7 @@ nav.scrolled {
   backdrop-filter: blur(12px);
 }
 
-.light-mode nav.scrolled {
+.light nav.scrolled {
   background: hsla(0, 0%, 98%, 0.4);
 }
 
@@ -253,7 +253,7 @@ nav.scrolled {
   border: 1px solid hsla(0, 0%, 100%, 0.05);
 }
 
-.light-mode .nav-links {
+.light .nav-links {
   background: hsla(240, 10%, 10%, 0.03);
   border: 1px solid hsla(240, 10%, 10%, 0.05);
 }
@@ -290,8 +290,8 @@ nav.scrolled {
   color: hsl(240, 10%, 4%);
 }
 
-.light-mode .nav-links a:hover,
-.light-mode .nav-links a.active {
+.light .nav-links a:hover,
+.light .nav-links a.active {
   color: white;
 }
 
@@ -348,7 +348,7 @@ nav.scrolled {
     z-index: 1000;
   }
 
-  .light-mode .nav-links {
+  .light .nav-links {
     background: hsla(0, 0%, 98%, 0.98);
   }
 
@@ -371,7 +371,7 @@ nav.scrolled {
     color: var(--primary);
   }
 
-  .light-mode .nav-links a.active {
+  .light .nav-links a.active {
     color: var(--primary);
   }
 

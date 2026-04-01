@@ -4,25 +4,39 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   srcDir: "app",
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      emailjsServiceId: "service_mc4a317",
+      emailjsTemplateId: "template_5ugl1jn",
+      emailjsPublicKey: "br7Nn_0J3sMhA_cmc",
+    },
+  },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/icon", "@nuxtjs/color-mode", "@nuxtjs/i18n", "@nuxt/ui", "@nuxtjs/sitemap", "@nuxtjs/robots"],
+  modules: [
+    "@nuxt/icon",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/i18n",
+    "@nuxt/ui",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+  ],
   site: {
-    url: 'https://dishapandey.com', // Replace with your actual domain
-    name: 'Disha Pandey | Full Stack Developer',
-    description: 'Portfolio of Disha Pandey, a Full Stack Developer specializing in Vue, Next.js, and Node.js.',
-    defaultLocale: 'en-US',
+    url: "https://dishapandey.com", // Replace with your actual domain
+    name: "Disha Pandey | Full Stack Developer",
+    description:
+      "Portfolio of Disha Pandey, a Full Stack Developer specializing in Vue, Next.js, and Node.js.",
+    defaultLocale: "en-US",
   },
   sitemap: {
     enabled: true,
   },
   robots: {
     enabled: true,
-    disallow: ['/admin', '/private'],
+    disallow: ["/admin", "/private"],
   },
   colorMode: {
     preference: "dark",
-    fallback: "dark",
-    classSuffix: "-mode",
+    fallback: "dark"
   },
   devServer: {
     port: 3000,
@@ -41,7 +55,7 @@ export default defineNuxtConfig({
     defaultLocale: "en-US",
     strategy: "no_prefix",
     langDir: "locales",
-    baseUrl: 'https://dishapandey.com',
+    baseUrl: "https://dishapandey.com",
   },
   app: {
     head: {

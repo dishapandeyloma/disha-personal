@@ -74,34 +74,48 @@ const stats = computed(() => [
 ]);
 
 onMounted(() => {
-  gsap.from(".about-content > *", {
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top 80%",
-    },
-    opacity: 0,
-    y: 30,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: "power3.out",
-    clearProps: "all",
-  });
+  gsap.fromTo(".about-content > *", 
+    { opacity: 0, y: 30 },
+    {
+      scrollTrigger: {
+        trigger: ".about-section",
+        start: "top 80%",
+        once: true,
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: "power3.out",
+      clearProps: "transform",
+    }
+  );
 
-  gsap.from(".about-visual", {
-    scrollTrigger: {
-      trigger: ".about-visual",
-      start: "top 80%",
-    },
-    opacity: 0,
-    scale: 0.9,
-    duration: 0.7,
-    ease: "power2.out",
-    clearProps: "all",
-  });
+  gsap.fromTo(".about-visual", 
+    { opacity: 0, scale: 0.9 },
+    {
+      scrollTrigger: {
+        trigger: ".about-visual",
+        start: "top 80%",
+        once: true,
+      },
+      opacity: 1,
+      scale: 1,
+      duration: 0.7,
+      ease: "power2.out",
+      clearProps: "transform",
+    }
+  );
 });
 </script>
 
 <style scoped>
+.about-content > * {
+  opacity: 0;
+}
+.about-visual {
+  opacity: 0;
+}
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;

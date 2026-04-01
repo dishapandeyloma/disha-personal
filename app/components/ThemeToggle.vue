@@ -113,11 +113,11 @@ const toggleTheme = (event) => {
   z-index: 9999;
 }
 
-.light-mode ::view-transition-old(root) {
+.light ::view-transition-old(root) {
   z-index: 9999;
 }
 
-.light-mode ::view-transition-new(root) {
+.light ::view-transition-new(root) {
   z-index: 1;
 }
 </style>
